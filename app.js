@@ -27,12 +27,13 @@ const translations = {
         "btn-edit": "Режим правки",
         "btn-cloud-save": "Облако",
         "btn-export": "Экспорт HTML",
-        "install-btn-text": "Установить приложение",
+        "install-btn-text": "Скачать приложение",
 
         // Sidebar Tabs
         "tab-blocks": "Блоки",
         "tab-styles": "Стили",
         "tab-settings": "Настройки",
+        "tab-help": "Помощь",
 
         // Panel: Blocks Library
         "blocks-lib-title": "Библиотека блоков",
@@ -85,12 +86,24 @@ const translations = {
         "settings-desc": "Настройте метаданные SEO и параметры",
         "label-page-title": "Заголовок страницы (SEO Title)",
         "hint-page-title": "Отображается в названии вкладки браузера.",
-        "label-meta-desc": "Мета-описание (Description)",
+        "label-meta-desc": "Meta Description (Описание)",
         "hint-meta-desc": "Краткое описание страницы для поисковых систем.",
         "label-fonts-settings": "Шрифты Google Fonts",
         "label-font-headings": "Шрифт заголовков",
         "label-font-body": "Шрифт основного текста",
         "label-editor-language": "Язык интерфейса",
+
+        // Panel: Help & Manual Instructions
+        "help-title": "Руководство пользователя",
+        "help-desc": "Инструкция по созданию, настройке и публикации сайта",
+        "help-q1": "1. Как добавлять и редактировать контент?",
+        "help-a1": "Нажмите на нужный блок во вкладке «Блоки», чтобы добавить его. Вы можете изменять любой текст на холсте прямо на экране (просто кликните по тексту). Чтобы заменить картинку, нажмите на нее прямо на холсте и введите новую ссылку.",
+        "help-q2": "2. Как настроить ссылки на кнопках?",
+        "help-a2": "Выделите нужный блок кликом на холсте, перейдите во вкладку «Стили» и прокрутите вниз до раздела «Кастомизация контента». Введите URL-адрес назначения в поле «Ссылка для кнопки». Вы можете указывать полные ссылки (например, https://my-site.ru/buy) или якоря переходов внутри страницы (например, #pricing).",
+        "help-q3": "3. Как заставить форму контактов работать?",
+        "help-a3": "Выделите форму контактов на холсте. В разделе кастомизации контента введите ссылку для отправки (например, от бесплатного сервиса Formspree.io). На готовом сайте форма будет отправлять все заявки на вашу электронную почту.",
+        "help-q4": "4. Как экспортировать и запустить сайт бесплатно?",
+        "help-a4": "Нажмите кнопку «Экспорт HTML» в верхнем правом углу. Браузер сгенерирует чистый код и скачает файл «index.html». Вы можете перетащить этот файл на бесплатный хостинг Netlify или залить на GitHub Pages, и страница будет работать бесплатно в интернете!",
 
         // Canvas Empty State
         "empty-state-title": "Ваш холст пуст",
@@ -127,6 +140,7 @@ const translations = {
         "tab-blocks": "Blocks",
         "tab-styles": "Styles",
         "tab-settings": "Page",
+        "tab-help": "Help",
 
         // Panel: Blocks Library
         "blocks-lib-title": "Block Library",
@@ -186,6 +200,18 @@ const translations = {
         "label-font-body": "Body Font Family",
         "label-editor-language": "Editor Language",
 
+        // Panel: Help & Manual Instructions
+        "help-title": "Help & Instructions",
+        "help-desc": "Learn how to build, deploy, and configure your website",
+        "help-q1": "1. How to add and edit content?",
+        "help-a1": "Click any block in the 'Blocks' tab to add it to the canvas. Click any text directly on the screen to change it, or click images directly to change their URLs.",
+        "help-q2": "2. How to configure links on buttons?",
+        "help-a2": "Select a block on the canvas, go to the 'Styles' tab, and scroll to 'Block Content Customization'. Enter the target URL in the 'Button Link URL' field. You can write external URLs or anchor tags like '#pricing'.",
+        "help-q3": "3. How to make the contact form work?",
+        "help-a3": "Select the contact form block. In the Styles tab under content customization, paste a form submission endpoint (e.g. from Formspree.io). The form on your exported website will submit messages directly to your email.",
+        "help-q4": "4. How to export and host for free?",
+        "help-a4": "Click the 'Export HTML' button in the top right. It will compile your layout and download it as an 'index.html' file. You can drag and drop this file into Netlify or upload it to GitHub Pages for 100% free hosting.",
+
         // Canvas Empty State
         "empty-state-title": "Your canvas is empty",
         "empty-state-desc": "Select blocks from the left sidebar library to start forging your website. Click elements directly inside the canvas to edit text and styles.",
@@ -217,7 +243,6 @@ function applyLanguage(lang) {
             if (key === "logo-text") {
                 elem.innerHTML = t[key];
             } else if (elem.querySelector("i")) {
-                // Keep the icon tag inside the button/element
                 const icon = elem.querySelector("i").outerHTML;
                 elem.innerHTML = `${icon} <span>${t[key]}</span>`;
             } else {
@@ -606,7 +631,7 @@ const blockTemplates = {
             title: "Get in touch",
             subtitle: "Have questions? We would love to hear from you. Send us a message.",
             ctaText: "Send Message",
-            formAction: "https://formspree.io/f/your-id", // default form endpoint
+            formAction: "https://formspree.io/f/your-id", 
             bgColor: "#ffffff",
             textColor: "#1f2937",
             padding: "80",
@@ -1026,7 +1051,7 @@ function addBlock(templateName) {
             defaultData.plan3Name = "Корпоративный";
         } else if (templateName === 'cta-center') {
             defaultData.title = "Готовы ускорить рост ваших продаж?";
-            defaultData.subtitle = "Присоединяйтесь к 10,000+ создателям, строящим сайты на SiteForge.";
+            defaultData.subtitle = "Присоединяйтесь к 10,000+ создателям, ноющим сайты на SiteForge.";
             defaultData.ctaText = "Начать сейчас";
         } else if (templateName === 'contact-simple') {
             defaultData.title = "Связаться с нами";
@@ -1090,14 +1115,14 @@ function toggleBgModeControls(mode, bgVal) {
 let deferredPrompt = null;
 
 function initPWAInstallation() {
-    const installBtn = document.getElementById("pwa-install-btn");
+    const installBtn = document.getElementById("btn-install"); // header button
 
     window.addEventListener('beforeinstallprompt', (e) => {
         e.preventDefault();
         deferredPrompt = e;
         
         if (installBtn && editorMode === "edit") {
-            installBtn.style.display = "flex";
+            installBtn.style.display = "inline-flex";
         }
     });
 
@@ -1146,7 +1171,7 @@ function initLocalization() {
 
 // --- EVENT LISTENERS REGISTRATION ---
 function initUIEventListeners() {
-    // 1. Sidebar Tab Switchers
+    // 1. Sidebar Tab Switchers (Updated to support help tab)
     const tabButtons = document.querySelectorAll(".sidebar-tabs .tab-btn");
     tabButtons.forEach(btn => {
         btn.addEventListener("click", () => {
@@ -1186,7 +1211,7 @@ function initUIEventListeners() {
 
     // 4. Preview Mode Switcher
     const btnPreview = document.getElementById("btn-preview");
-    const installBtn = document.getElementById("pwa-install-btn");
+    const installBtn = document.getElementById("btn-install");
     
     btnPreview.addEventListener("click", () => {
         if (editorMode === "edit") {
@@ -1203,7 +1228,7 @@ function initUIEventListeners() {
             document.body.classList.add("editor-mode");
             btnPreview.innerHTML = `<i class="fa-solid fa-eye"></i> <span>${currentLang === 'ru' ? "Предпросмотр" : "Preview"}</span>`;
             
-            if (installBtn && deferredPrompt) installBtn.style.display = "flex";
+            if (installBtn && deferredPrompt) installBtn.style.display = "inline-flex";
         }
         renderCanvas();
     });
