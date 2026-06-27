@@ -1354,6 +1354,20 @@ function initUIEventListeners() {
     document.getElementById("btn-export").addEventListener("click", () => {
         exportHtmlWebsite();
     });
+
+    // 10. Help Accordion Toggle Handlers
+    document.querySelectorAll(".help-card").forEach(card => {
+        const toggle = card.querySelector(".help-header-toggle");
+        if (toggle) {
+            toggle.addEventListener("click", () => {
+                const isOpen = card.classList.contains("open");
+                document.querySelectorAll(".help-card").forEach(c => c.classList.remove("open"));
+                if (!isOpen) {
+                    card.classList.add("open");
+                }
+            });
+        }
+    });
 }
 
 function updateSelectedBlockProperty(prop, val) {
