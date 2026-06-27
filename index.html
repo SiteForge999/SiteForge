@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SiteForge — High-Conversion Landing Page Builder</title>
+    <!-- PWA & Favicon -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/jpeg" href="logo-icon.jpg">
+    <meta name="theme-color" content="#0f131a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="logo-icon.jpg">
+    <!-- Premium Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="editor-mode">
+
+    <!-- Top Navigation Bar -->
+    <header class="editor-header">
+        <div class="header-left">
+            <div class="logo">
+                <i class="fa-solid fa-wand-magic-sparkles logo-icon"></i>
+                <span class="logo-text">Site<span class="logo-accent">Forge</span></span>
+            </div>
+            <div class="status-indicator" id="save-status">
+                <i class="fa-solid fa-cloud-check status-icon"></i>
+                <span class="status-text">Draft saved locally</span>
+            </div>
+        </div>
+
+        <!-- Viewport Switcher -->
+        <div class="viewport-controls">
+            <button class="viewport-btn active" data-viewport="desktop" title="Desktop View">
+                <i class="fa-solid fa-desktop"></i>
+            </button>
+            <button class="viewport-btn" data-viewport="tablet" title="Tablet View">
+                <i class="fa-solid fa-tablet-screen-button"></i>
+            </button>
+            <button class="viewport-btn" data-viewport="mobile" title="Mobile View">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+            </button>
+        </div>
+
+        <!-- Editor Control Actions -->
+        <div class="header-right">
+            <button class="btn btn-secondary" id="btn-preview" title="Toggle Preview Mode">
+                <i class="fa-solid fa-eye"></i> <span>Preview</span>
+            </button>
+            <button class="btn btn-secondary" id="btn-supabase" title="Connect / Save to Cloud">
+                <i class="fa-solid fa-cloud"></i> <span>Cloud Save</span>
+            </button>
+            <button class="btn btn-primary" id="btn-export" title="Export Clean HTML">
+                <i class="fa-solid fa-download"></i> <span>Export HTML</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="main-editor-container">
+        <!-- Sidebar Controls -->
+        <aside class="editor-sidebar">
+            <!-- Sidebar Tabs -->
+            <div class="sidebar-tabs">
+                <button class="tab-btn active" data-tab="blocks">
+                    <i class="fa-solid fa-cubes"></i> Blocks
+                </button>
+                <button class="tab-btn" data-tab="styles" id="tab-btn-styles">
+                    <i class="fa-solid fa-sliders"></i> Styles
+                </button>
+                <button class="tab-btn" data-tab="settings">
+                    <i class="fa-solid fa-gear"></i> Page
+                </button>
+            </div>
+
+            <!-- Tab Panels Content -->
+            <div class="sidebar-content">
+                <!-- Panel 1: Blocks Library -->
+                <div class="tab-panel active" id="panel-blocks">
+                    <div class="panel-header">
+                        <h3>Block Library</h3>
+                        <p>Click blocks to add them to your website canvas</p>
+                    </div>
+
+                    <div class="block-categories">
+                        <!-- Navigation Blocks -->
+                        <div class="category-group">
+                            <div class="category-title">Navigation</div>
+                            <div class="blocks-grid">
+                                <div class="block-item" data-template="navbar">
+                                    <div class="block-icon"><i class="fa-solid fa-window-minimize"></i></div>
+                                    <span class="block-name">Classic Header</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hero Blocks -->
+                        <div class="category-group">
+                            <div class="category-title">Hero Sections</div>
+                            <div class="blocks-grid">
+                                <div class="block-item" data-template="hero-gradient">
+                                    <div class="block-icon"><i class="fa-solid fa-image-portrait"></i></div>
+                                    <span class="block-name">Modern Gradient</span>
+                                </div>
+                                <div class="block-item" data-template="hero-split">
+                                    <div class="block-icon"><i class="fa-solid fa-columns"></i></div>
+                                    <span class="block-name">Split Showcase</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Features Blocks -->
+                        <div class="category-group">
+                            <div class="category-title">Features & Grid</div>
+                            <div class="blocks-grid">
+                                <div class="block-item" data-template="features-3col">
+                                    <div class="block-icon"><i class="fa-solid fa-table-cells-large"></i></div>
+                                    <span class="block-name">3-Col Features</span>
+                                </div>
+                                <div class="block-item" data-template="feature-split-left">
+                                    <div class="block-icon"><i class="fa-solid fa-left-right"></i></div>
+                                    <span class="block-name">Media & Text</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonials & Reviews -->
+                        <div class="category-group">
+                            <div class="category-title">Social Proof</div>
+                            <div class="blocks-grid">
+                                <div class="block-item" data-template="testimonials">
+                                    <div class="block-icon"><i class="fa-solid fa-quote-left"></i></div>
+                                    <span class="block-name">Reviews Grid</span>
+                                </div>
+                                <div class="block-item" data-template="pricing">
+                                    <div class="block-icon"><i class="fa-solid fa-tags"></i></div>
+                                    <span class="block-name">Pricing Cards</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Forms & Contact -->
+                        <div class="category-group">
+                            <div class="category-title">Contact & Callout</div>
+                            <div class="blocks-grid">
+                                <div class="block-item" data-template="cta-center">
+                                    <div class="block-icon"><i class="fa-solid fa-bullhorn"></i></div>
+                                    <span class="block-name">Action Callout</span>
+                                </div>
+                                <div class="block-item" data-template="contact-simple">
+                                    <div class="block-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+                                    <span class="block-name">Contact Form</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Footers -->
+                        <div class="category-group">
+                            <div class="category-title">Footers</div>
+                            <div class="blocks-grid">
+                                <div class="block-item" data-template="footer-simple">
+                                    <div class="block-icon"><i class="fa-solid fa-square-minus"></i></div>
+                                    <span class="block-name">Footer Simple</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Panel 2: Styles Inspector -->
+                <div class="tab-panel" id="panel-styles">
+                    <div class="no-selection-message">
+                        <i class="fa-solid fa-mouse-pointer pointer-icon"></i>
+                        <h4>No Block Selected</h4>
+                        <p>Click on any block in the canvas to customize its colors, spacing, and properties.</p>
+                    </div>
+
+                    <div class="inspector-controls" style="display: none;">
+                        <div class="panel-header">
+                            <h3 id="inspector-block-title">Block Properties</h3>
+                            <p>Customize the selected block below</p>
+                        </div>
+
+                        <div class="inspector-section">
+                            <label class="control-label">Background Style</label>
+                            <div class="bg-mode-selector">
+                                <button class="mode-btn active" data-bg-mode="color">Color</button>
+                                <button class="mode-btn" data-bg-mode="gradient">Gradient</button>
+                                <button class="mode-btn" data-bg-mode="image">Image</button>
+                            </div>
+
+                            <!-- Background controls -->
+                            <div class="control-group bg-control" id="bg-color-control">
+                                <label class="sub-label">Background Color</label>
+                                <div class="color-picker-wrapper">
+                                    <input type="color" id="input-bg-color" value="#ffffff">
+                                    <input type="text" id="input-bg-color-text" class="text-input" value="#ffffff">
+                                </div>
+                            </div>
+
+                            <div class="control-group bg-control" id="bg-gradient-control" style="display: none;">
+                                <label class="sub-label">Preset Gradients</label>
+                                <div class="gradient-presets">
+                                    <button class="gradient-preset-btn" data-gradient="linear-gradient(135deg, #667eea 0%, #764ba2 100%)" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></button>
+                                    <button class="gradient-preset-btn" data-gradient="linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%)" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%);"></button>
+                                    <button class="gradient-preset-btn" data-gradient="linear-gradient(135deg, #f093fb 0%, #f5576c 100%)" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></button>
+                                    <button class="gradient-preset-btn" data-gradient="linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></button>
+                                    <button class="gradient-preset-btn" data-gradient="linear-gradient(135deg, #434343 0%, #000000 100%)" style="background: linear-gradient(135deg, #434343 0%, #000000 100%);"></button>
+                                    <button class="gradient-preset-btn" data-gradient="linear-gradient(135deg, #111827 0%, #1f2937 100%)" style="background: linear-gradient(135deg, #111827 0%, #1f2937 100%);"></button>
+                                </div>
+                            </div>
+
+                            <div class="control-group bg-control" id="bg-image-control" style="display: none;">
+                                <label class="sub-label">Background Image URL</label>
+                                <input type="text" id="input-bg-image-url" class="text-input" placeholder="https://images.unsplash.com/...">
+                            </div>
+                        </div>
+
+                        <div class="inspector-section">
+                            <label class="control-label">Text Colors</label>
+                            <div class="control-group">
+                                <label class="sub-label">Primary Title & Text</label>
+                                <div class="color-picker-wrapper">
+                                    <input type="color" id="input-text-color" value="#1f2937">
+                                    <input type="text" id="input-text-color-text" class="text-input" value="#1f2937">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="inspector-section">
+                            <label class="control-label">Padding (Vertical Spacing)</label>
+                            <div class="control-group">
+                                <div class="range-slider-wrapper">
+                                    <input type="range" id="input-padding" min="0" max="150" step="10" value="60">
+                                    <span class="range-val" id="padding-val">60px</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="inspector-section" id="custom-block-fields">
+                            <label class="control-label">Block Content Customization</label>
+                            <!-- Dynamic fields depending on selected block will be rendered here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 3: Settings Panel -->
+                <div class="tab-panel" id="panel-settings">
+                    <div class="panel-header">
+                        <h3 id="lbl-page-settings">Page Settings</h3>
+                        <p id="lbl-page-settings-desc">Configure SEO metadata and global parameters</p>
+                    </div>
+
+                    <div class="inspector-section">
+                        <div class="control-group">
+                            <label class="control-label" id="lbl-editor-language">Editor Language / Язык интерфейса</label>
+                            <select id="setting-language" class="text-input select-input">
+                                <option value="ru">Русский</option>
+                                <option value="en">English</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="inspector-section">
+                        <div class="control-group">
+                            <label class="control-label">Page Title (SEO)</label>
+                            <input type="text" id="setting-title" class="text-input" value="My Awesome Landing Page">
+                            <p class="field-hint">Appears in the browser tab and search engine results.</p>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label">Meta Description</label>
+                            <textarea id="setting-desc" class="text-input text-area" rows="3">Discover our beautiful service. High quality and conversion-optimized blocks built in minutes.</textarea>
+                            <p class="field-hint">A brief description for search engine result snippets.</p>
+                        </div>
+                    </div>
+
+                    <div class="inspector-section">
+                        <label class="control-label">Google Fonts Settings</label>
+                        <div class="control-group">
+                            <label class="sub-label">Heading Font Family</label>
+                            <select id="setting-font-headings" class="text-input select-input">
+                                <option value="'Outfit', sans-serif">Outfit (Modern / Tech)</option>
+                                <option value="'Inter', sans-serif">Inter (Clean / SaaS)</option>
+                                <option value="'Playfair Display', serif">Playfair Display (Elegant / Fashion)</option>
+                                <option value="sans-serif">System Sans</option>
+                            </select>
+                        </div>
+                        <div class="control-group">
+                            <label class="sub-label">Body Font Family</label>
+                            <select id="setting-font-body" class="text-input select-input">
+                                <option value="'Inter', sans-serif">Inter (Highly Readable)</option>
+                                <option value="'Outfit', sans-serif">Outfit (Modern)</option>
+                                <option value="sans-serif">System Sans</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Canvas Area where elements are built -->
+        <main class="canvas-viewport-wrapper">
+            <div class="canvas-viewport" id="viewport-container" data-size="desktop">
+                <div class="viewport-header">
+                    <div class="viewport-dots">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <div class="viewport-url-bar">
+                        <i class="fa-solid fa-lock"></i>
+                        <span id="viewport-url-text">https://preview-site.forge</span>
+                    </div>
+                    <div class="viewport-info">
+                        <span id="viewport-dimensions">Desktop (100%)</span>
+                    </div>
+                </div>
+
+                <!-- The Actual Canvas -->
+                <div class="canvas-content" id="canvas">
+                    <!-- Drop Zone Placeholder (Empty State) -->
+                    <div class="canvas-empty-state" id="empty-state">
+                        <div class="empty-icon"><i class="fa-solid fa-plus-circle"></i></div>
+                        <h2>Your canvas is empty</h2>
+                        <p>Select blocks from the left sidebar library to start forging your website. Click elements directly inside the canvas to edit text and styles.</p>
+                        <button class="btn btn-secondary" onclick="document.querySelector('.block-item').click()">
+                            Add a Header Block
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Supabase Cloud Connection Modal -->
+    <div class="modal-overlay" id="supabase-modal" style="display: none;">
+        <div class="modal-card">
+            <div class="modal-header">
+                <div class="modal-title-wrapper">
+                    <i class="fa-solid fa-cloud-bolt cloud-icon"></i>
+                    <h3>Connect Supabase Backend</h3>
+                </div>
+                <button class="close-btn" id="modal-close"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <p>By connecting a Supabase project, you can save your designs to the database, upload custom images, and allow user logins. Ideal for transferring ownership as a fully functional SaaS.</p>
+                
+                <div class="form-group">
+                    <label class="form-label">Supabase Project URL</label>
+                    <input type="text" id="supabase-url" class="form-input" placeholder="https://your-project.supabase.co">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Supabase Anon Key</label>
+                    <input type="password" id="supabase-key" class="form-input" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...">
+                </div>
+
+                <div class="auth-buttons-wrapper">
+                    <div class="auth-section">
+                        <label class="form-label">Save Current Design to Database</label>
+                        <div class="btn-row">
+                            <button class="btn btn-primary" id="btn-save-project"><i class="fa-solid fa-floppy-disk"></i> Save Project</button>
+                            <button class="btn btn-secondary" id="btn-load-project"><i class="fa-solid fa-folder-open"></i> Load Saved Project</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <span class="connection-status badge-disconnected" id="db-status-badge">
+                    <i class="fa-solid fa-circle-dot"></i> Not Connected
+                </span>
+                <button class="btn btn-primary" id="btn-connect-supabase">Connect Database</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating PWA Install Button -->
+    <button class="pwa-install-btn" id="pwa-install-btn" style="display: none;">
+        <i class="fa-solid fa-cloud-arrow-down"></i> <span id="lbl-install-btn">Install App</span>
+    </button>
+
+    <!-- Script imports -->
+    <script src="supabase.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
