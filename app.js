@@ -280,6 +280,31 @@ function applyLanguage(lang) {
         if (size === "tablet") viewportDimText.textContent = lang === 'ru' ? "Планшет (768px)" : "Tablet (768px)";
         if (size === "mobile") viewportDimText.textContent = lang === 'ru' ? "Мобильный (375px)" : "Mobile (375px)";
     }
+
+    // Dynamic translation of font selector select options
+    const headingFontSelect = document.getElementById("setting-font-headings");
+    const bodyFontSelect = document.getElementById("setting-font-body");
+    if (headingFontSelect && bodyFontSelect) {
+        if (lang === 'ru') {
+            headingFontSelect.options[0].text = "Outfit (Современный / Технологичный)";
+            headingFontSelect.options[1].text = "Inter (Чистый / SaaS)";
+            headingFontSelect.options[2].text = "Playfair Display (Элегантный / Мода)";
+            headingFontSelect.options[3].text = "Системный шрифт";
+            
+            bodyFontSelect.options[0].text = "Inter (Легко читаемый)";
+            bodyFontSelect.options[1].text = "Outfit (Современный)";
+            bodyFontSelect.options[2].text = "Системный шрифт";
+        } else {
+            headingFontSelect.options[0].text = "Outfit (Modern / Tech)";
+            headingFontSelect.options[1].text = "Inter (Clean / SaaS)";
+            headingFontSelect.options[2].text = "Playfair Display (Elegant / Fashion)";
+            headingFontSelect.options[3].text = "System Sans";
+            
+            bodyFontSelect.options[0].text = "Inter (Highly Readable)";
+            bodyFontSelect.options[1].text = "Outfit (Modern)";
+            bodyFontSelect.options[2].text = "System Sans";
+        }
+    }
 }
 
 // --- STATE MANAGEMENT ---
@@ -543,12 +568,26 @@ const blockTemplates = {
             plan1Name: "Starter",
             plan1Price: "$9",
             plan1Link: "#starter",
+            plan1Cta: "Choose Plan",
+            plan1F1: "1 Active Landing Page",
+            plan1F2: "Standard Analytics",
+            plan1F3: "Community Support",
             plan2Name: "Pro",
             plan2Price: "$29",
             plan2Link: "#pro",
+            plan2Cta: "Choose Plan",
+            plan2F1: "10 Active Landing Pages",
+            plan2F2: "Real-time Analytics",
+            plan2F3: "Priority Email Support",
             plan3Name: "Enterprise",
             plan3Price: "$99",
             plan3Link: "#enterprise",
+            plan3Cta: "Choose Plan",
+            plan3F1: "Unlimited Landing Pages",
+            plan3F2: "Advanced Reports API",
+            plan3F3: "24/7 Dedicated Support",
+            badgeText: "Popular",
+            moText: "/mo",
             bgColor: "#ffffff",
             textColor: "#1f2937",
             padding: "80",
@@ -565,34 +604,34 @@ const blockTemplates = {
                     <div class="pricing-grid">
                         <div class="pricing-card">
                             <div class="pricing-name" ${isEditable} data-field="plan1Name">${data.plan1Name}</div>
-                            <div class="pricing-price" ${isEditable} data-field="plan1Price">${data.plan1Price}<span style="font-size: 14px; font-weight: normal;">/mo</span></div>
+                            <div class="pricing-price" ${isEditable} data-field="plan1Price">${data.plan1Price}<span style="font-size: 14px; font-weight: normal;" ${isEditable} data-field="moText">${data.moText || '/mo'}</span></div>
                             <div class="pricing-features">
-                                <div class="pricing-feature"><i class="fa-solid fa-check"></i> 1 Active Landing Page</div>
-                                <div class="pricing-feature"><i class="fa-solid fa-check"></i> Standard Analytics</div>
-                                <div class="pricing-feature"><i class="fa-solid fa-check"></i> Community Support</div>
+                                <div class="pricing-feature"><i class="fa-solid fa-check"></i> <span ${isEditable} data-field="plan1F1">${data.plan1F1}</span></div>
+                                <div class="pricing-feature"><i class="fa-solid fa-check"></i> <span ${isEditable} data-field="plan1F2">${data.plan1F2}</span></div>
+                                <div class="pricing-feature"><i class="fa-solid fa-check"></i> <span ${isEditable} data-field="plan1F3">${data.plan1F3}</span></div>
                             </div>
-                            <a href="${data.plan1Link}" class="pricing-btn">Choose Plan</a>
+                            <a href="${data.plan1Link}" class="pricing-btn" ${isEditable} data-field="plan1Cta">${data.plan1Cta}</a>
                         </div>
                         <div class="pricing-card popular">
-                            <span class="pricing-badge">Popular</span>
+                            <span class="pricing-badge" ${isEditable} data-field="badgeText">${data.badgeText}</span>
                             <div class="pricing-name" ${isEditable} data-field="plan2Name">${data.plan2Name}</div>
-                            <div class="pricing-price" ${isEditable} data-field="plan2Price">${data.plan2Price}<span style="font-size: 14px; font-weight: normal;">/mo</span></div>
+                            <div class="pricing-price" ${isEditable} data-field="plan2Price">${data.plan2Price}<span style="font-size: 14px; font-weight: normal;" ${isEditable} data-field="moText">${data.moText || '/mo'}</span></div>
                             <div class="pricing-features">
-                                <div class="pricing-feature"><i class="fa-solid fa-check"></i> 10 Active Landing Pages</div>
-                                <div class="pricing-feature"><i class="fa-solid fa-check"></i> Real-time Analytics</div>
-                                <div class="pricing-feature"><i class="fa-solid fa-check"></i> Priority Email Support</div>
+                                <div class="pricing-feature"><i class="fa-solid fa-check"></i> <span ${isEditable} data-field="plan2F1">${data.plan2F1}</span></div>
+                                <div class="pricing-feature"><i class="fa-solid fa-check"></i> <span ${isEditable} data-field="plan2F2">${data.plan2F2}</span></div>
+                                <div class="pricing-feature"><i class="fa-solid fa-check"></i> <span ${isEditable} data-field="plan2F3">${data.plan2F3}</span></div>
                             </div>
-                            <a href="${data.plan2Link}" class="pricing-btn">Choose Plan</a>
+                            <a href="${data.plan2Link}" class="pricing-btn" ${isEditable} data-field="plan2Cta">${data.plan2Cta}</a>
                         </div>
                         <div class="pricing-card">
                             <div class="pricing-name" ${isEditable} data-field="plan3Name">${data.plan3Name}</div>
-                            <div class="pricing-price" ${isEditable} data-field="plan3Price">${data.plan3Price}<span style="font-size: 14px; font-weight: normal;">/mo</span></div>
+                            <div class="pricing-price" ${isEditable} data-field="plan3Price">${data.plan3Price}<span style="font-size: 14px; font-weight: normal;" ${isEditable} data-field="moText">${data.moText || '/mo'}</span></div>
                             <div class="pricing-features">
-                                <div class="pricing-feature"><i class="fa-solid fa-check"></i> Unlimited Landing Pages</div>
-                                <div class="pricing-feature"><i class="fa-solid fa-check"></i> Advanced Reports API</div>
-                                <div class="pricing-feature"><i class="fa-solid fa-check"></i> 24/7 Dedicated Support</div>
+                                <div class="pricing-feature"><i class="fa-solid fa-check"></i> <span ${isEditable} data-field="plan3F1">${data.plan3F1}</span></div>
+                                <div class="pricing-feature"><i class="fa-solid fa-check"></i> <span ${isEditable} data-field="plan3F2">${data.plan3F2}</span></div>
+                                <div class="pricing-feature"><i class="fa-solid fa-check"></i> <span ${isEditable} data-field="plan3F3">${data.plan3F3}</span></div>
                             </div>
-                            <a href="${data.plan3Link}" class="pricing-btn">Choose Plan</a>
+                            <a href="${data.plan3Link}" class="pricing-btn" ${isEditable} data-field="plan3Cta">${data.plan3Cta}</a>
                         </div>
                     </div>
                 </div>
@@ -606,6 +645,7 @@ const blockTemplates = {
             subtitle: "Join over 10,000+ creators building fast, high-converting websites.",
             ctaText: "Get Started Now",
             ctaLink: "#cta",
+            emailPlaceholder: "Enter your email",
             bgColor: "linear-gradient(135deg, #111827 0%, #1f2937 100%)",
             textColor: "#ffffff",
             padding: "80",
@@ -618,7 +658,7 @@ const blockTemplates = {
                     <h2 class="cta-title" style="color: ${data.textColor};" ${isEditable} data-field="title">${data.title}</h2>
                     <p class="cta-desc" style="color: ${data.textColor}bb;" ${isEditable} data-field="subtitle">${data.subtitle}</p>
                     <div class="cta-form">
-                        <input type="email" placeholder="Enter your email" class="cta-input" readonly>
+                        <input type="email" placeholder="${data.emailPlaceholder || 'Enter your email'}" class="cta-input" readonly>
                         <a href="${data.ctaLink}" class="cta-submit" style="display: flex; align-items: center; justify-content: center; text-decoration: none;" ${isEditable} data-field="ctaText">${data.ctaText}</a>
                     </div>
                 </div>
@@ -632,6 +672,9 @@ const blockTemplates = {
             subtitle: "Have questions? We would love to hear from you. Send us a message.",
             ctaText: "Send Message",
             formAction: "https://formspree.io/f/your-id", 
+            namePlaceholder: "Name",
+            emailPlaceholder: "Email",
+            messagePlaceholder: "Your Message",
             bgColor: "#ffffff",
             textColor: "#1f2937",
             padding: "80",
@@ -647,10 +690,10 @@ const blockTemplates = {
                     </div>
                     <form class="contact-form-el" action="${data.formAction}" method="POST" onsubmit="${mode === 'edit' ? 'event.preventDefault()' : ''}">
                         <div class="form-row">
-                            <div class="form-col"><input type="text" name="name" placeholder="Name" class="contact-input-el" required ${mode === 'edit' ? 'readonly' : ''}></div>
-                            <div class="form-col"><input type="email" name="email" placeholder="Email" class="contact-input-el" required ${mode === 'edit' ? 'readonly' : ''}></div>
+                            <div class="form-col"><input type="text" name="name" placeholder="${data.namePlaceholder || 'Name'}" class="contact-input-el" required ${mode === 'edit' ? 'readonly' : ''}></div>
+                            <div class="form-col"><input type="email" name="email" placeholder="${data.emailPlaceholder || 'Email'}" class="contact-input-el" required ${mode === 'edit' ? 'readonly' : ''}></div>
                         </div>
-                        <textarea name="message" placeholder="Your Message" rows="4" class="contact-input-el" required ${mode === 'edit' ? 'readonly' : ''}></textarea>
+                        <textarea name="message" placeholder="${data.messagePlaceholder || 'Your Message'}" rows="4" class="contact-input-el" required ${mode === 'edit' ? 'readonly' : ''}></textarea>
                         <button class="hero-cta-btn" style="border: none; cursor: pointer; align-self: flex-start;" ${isEditable} data-field="ctaText">${data.ctaText}</button>
                     </form>
                 </div>
@@ -1049,14 +1092,32 @@ function addBlock(templateName) {
             defaultData.plan1Name = "Стартовый";
             defaultData.plan2Name = "Профессиональный";
             defaultData.plan3Name = "Корпоративный";
+            defaultData.plan1Cta = "Выбрать тариф";
+            defaultData.plan2Cta = "Выбрать тариф";
+            defaultData.plan3Cta = "Выбрать тариф";
+            defaultData.badgeText = "Популярно";
+            defaultData.moText = "/мес";
+            defaultData.plan1F1 = "1 активный лендинг";
+            defaultData.plan1F2 = "Стандартная аналитика";
+            defaultData.plan1F3 = "Поддержка сообщества";
+            defaultData.plan2F1 = "10 активных лендингов";
+            defaultData.plan2F2 = "Аналитика в реальном времени";
+            defaultData.plan2F3 = "Приоритетная поддержка";
+            defaultData.plan3F1 = "Безлимитные лендинги";
+            defaultData.plan3F2 = "API расширенных отчетов";
+            defaultData.plan3F3 = "Круглосуточная поддержка";
         } else if (templateName === 'cta-center') {
             defaultData.title = "Готовы ускорить рост ваших продаж?";
-            defaultData.subtitle = "Присоединяйтесь к 10,000+ создателям, ноющим сайты на SiteForge.";
+            defaultData.subtitle = "Присоединяйтесь к 10,000+ создателям, строящим сайты на SiteForge.";
             defaultData.ctaText = "Начать сейчас";
+            defaultData.emailPlaceholder = "Введите ваш email";
         } else if (templateName === 'contact-simple') {
             defaultData.title = "Связаться с нами";
             defaultData.subtitle = "Есть вопросы? Мы с радостью ответим на них. Напишите нам сообщение.";
             defaultData.ctaText = "Отправить сообщение";
+            defaultData.namePlaceholder = "Имя";
+            defaultData.emailPlaceholder = "Электронная почта";
+            defaultData.messagePlaceholder = "Ваше сообщение";
         } else if (templateName === 'footer-simple') {
             defaultData.brand = "СайтФорж";
             defaultData.copy = "© 2026 СайтФорж. Все права защищены.";
@@ -1117,30 +1178,55 @@ let deferredPrompt = null;
 function initPWAInstallation() {
     const installBtn = document.getElementById("btn-install"); // header button
 
+    if (installBtn) {
+        // PWA button is always available inside Editor Edit Mode to allow manual guidelines on click!
+        installBtn.style.display = "inline-flex";
+        
+        installBtn.addEventListener("click", async () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                console.log(`[PWA] Install choice outcome: ${outcome}`);
+                deferredPrompt = null;
+                installBtn.style.display = "none";
+            } else {
+                showPWAInstallInstructions();
+            }
+        });
+    }
+
     window.addEventListener('beforeinstallprompt', (e) => {
         e.preventDefault();
         deferredPrompt = e;
-        
-        if (installBtn && editorMode === "edit") {
-            installBtn.style.display = "inline-flex";
-        }
     });
-
-    if (installBtn) {
-        installBtn.addEventListener("click", async () => {
-            if (!deferredPrompt) return;
-            deferredPrompt.prompt();
-            const { outcome } = await deferredPrompt.userChoice;
-            console.log(`[PWA] Install choice outcome: ${outcome}`);
-            deferredPrompt = null;
-            installBtn.style.display = "none";
-        });
-    }
 
     window.addEventListener('appinstalled', (evt) => {
         console.log('[PWA] SiteForge successfully installed on device.');
         if (installBtn) installBtn.style.display = "none";
     });
+}
+
+function showPWAInstallInstructions() {
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    
+    let instructions = "";
+    if (currentLang === 'ru') {
+        instructions = "Запуск приложения SiteForge на вашем устройстве:\n\n";
+        if (isSafari || isMobile) {
+            instructions += "• Для Safari / iOS:\nНажмите кнопку «Поделиться» (иконка со стрелочкой) на панели браузера и выберите пункт «На экран Домой» (Add to Home Screen) или «Добавить в док-панель» в macOS.\n\n";
+        }
+        instructions += "• Для Google Chrome / Edge:\nПриложение можно запустить прямо из браузера! Нажмите на значок установки (плюс внутри монитора) в правой части адресной строки в самом верху.\n\n";
+        instructions += "• Для других браузеров:\nПриложение работает автономно благодаря Service Worker. Вы можете сохранить страницу в закладки для быстрого доступа.";
+    } else {
+        instructions = "Install SiteForge App on your device:\n\n";
+        if (isSafari || isMobile) {
+            instructions += "• For Safari / iOS:\nClick the 'Share' button in the toolbar and select 'Add to Home Screen' (or 'Add to Dock' in macOS Safari File menu).\n\n";
+        }
+        instructions += "• For Google Chrome / Edge:\nClick the install icon (plus inside a screen) on the right side of the address bar at the very top of your browser.\n\n";
+        instructions += "• For other browsers:\nSiteForge is cached offline. Save the link to your bookmarks or desktop for instant access.";
+    }
+    alert(instructions);
 }
 
 // --- LOCALIZATION INITIALIZER ---
@@ -1153,10 +1239,21 @@ function initLocalization() {
 
     const savedLang = localStorage.getItem("siteforge_lang") || defaultLang;
     
+    // If first time visit, translate the default landing page template title/description meta
+    const saved = localStorage.getItem("siteforge_draft");
+    if (!saved && savedLang === 'ru') {
+        projectState.title = "Мой потрясающий лендинг";
+        projectState.description = "Откройте для себя наш великолепный сервис. Блоки с высокой конверсией, созданные за считанные минуты.";
+    }
+
     const selector = document.getElementById("setting-language");
     selector.value = savedLang;
     
     applyLanguage(savedLang);
+
+    // Sync state values to page fields
+    document.getElementById("setting-title").value = projectState.title;
+    document.getElementById("setting-desc").value = projectState.description;
 
     selector.addEventListener("change", (e) => {
         const lang = e.target.value;
