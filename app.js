@@ -12,7 +12,7 @@ if ('serviceWorker' in navigator) {
 }
 
 // --- LOCALIZATION / TRANSLATIONS ---
-let currentLang = 'ru'; // Default, will detect automatically
+let currentLang = 'ru'; // Default
 
 const translations = {
     ru: {
@@ -23,16 +23,16 @@ const translations = {
         "status-saving": "Сохранение в облако...",
         "status-connected": "Подключено к Supabase",
         "status-disconnected": "Черновик сохранен локально",
-        "btn-preview": "<i class='fa-solid fa-eye'></i> <span>Предпросмотр</span>",
-        "btn-edit": "<i class='fa-solid fa-pen-nib'></i> <span>Режим правки</span>",
-        "btn-cloud-save": "<i class='fa-solid fa-cloud'></i> <span>Облако</span>",
-        "btn-export": "<i class='fa-solid fa-download'></i> <span>Экспорт HTML</span>",
+        "btn-preview": "Предпросмотр",
+        "btn-edit": "Режим правки",
+        "btn-cloud-save": "Облако",
+        "btn-export": "Экспорт HTML",
         "install-btn-text": "Установить приложение",
 
         // Sidebar Tabs
-        "tab-blocks": "<i class='fa-solid fa-cubes'></i> Блоки",
-        "tab-styles": "<i class='fa-solid fa-sliders'></i> Стили",
-        "tab-settings": "<i class='fa-solid fa-gear'></i> Настройки",
+        "tab-blocks": "Блоки",
+        "tab-styles": "Стили",
+        "tab-settings": "Настройки",
 
         // Panel: Blocks Library
         "blocks-lib-title": "Библиотека блоков",
@@ -73,9 +73,16 @@ const translations = {
         "label-content-customization": "Кастомизация контента",
         "label-showcase-image": "Ссылка на картинку блока",
 
+        // Dynamic Inspector Fields
+        "lbl-btn-url": "Ссылка для кнопки (CTA URL)",
+        "lbl-nav-links-url": "Ссылки разделов меню",
+        "lbl-form-action": "Адрес отправки формы (Action URL)",
+        "lbl-plan-urls": "Ссылки кнопок тарифов",
+        "lbl-logo-text": "Текст логотипа",
+
         // Panel: Page Settings
         "settings-title": "Настройки страницы",
-        "settings-desc": "Настройте метаданные SEO и глобальные параметры",
+        "settings-desc": "Настройте метаданные SEO и параметры",
         "label-page-title": "Заголовок страницы (SEO Title)",
         "hint-page-title": "Отображается в названии вкладки браузера.",
         "label-meta-desc": "Мета-описание (Description)",
@@ -96,10 +103,10 @@ const translations = {
         "modal-sb-url": "Ссылка на проект Supabase URL",
         "modal-sb-key": "Публичный ключ API Anon Key",
         "modal-sb-save-desc": "Сохранить текущий дизайн в базу данных",
-        "modal-btn-save": "<i class='fa-solid fa-floppy-disk'></i> Сохранить в облако",
-        "modal-btn-load": "<i class='fa-solid fa-folder-open'></i> Загрузить из облака",
-        "modal-badge-disconnected": "<i class='fa-solid fa-circle-dot'></i> Не подключено",
-        "modal-badge-connected": "<i class='fa-solid fa-circle-dot'></i> Подключено",
+        "modal-btn-save": "Сохранить в облако",
+        "modal-btn-load": "Загрузить из облака",
+        "modal-badge-disconnected": "Не подключено",
+        "modal-badge-connected": "Подключено",
         "modal-btn-connect": "Подключить базу"
     },
     en: {
@@ -110,16 +117,16 @@ const translations = {
         "status-saving": "Saving to cloud...",
         "status-connected": "Connected to Supabase",
         "status-disconnected": "Draft saved locally",
-        "btn-preview": "<i class='fa-solid fa-eye'></i> <span>Preview</span>",
-        "btn-edit": "<i class='fa-solid fa-pen-nib'></i> <span>Edit Mode</span>",
-        "btn-cloud-save": "<i class='fa-solid fa-cloud'></i> <span>Cloud Save</span>",
-        "btn-export": "<i class='fa-solid fa-download'></i> <span>Export HTML</span>",
+        "btn-preview": "Preview",
+        "btn-edit": "Edit Mode",
+        "btn-cloud-save": "Cloud Save",
+        "btn-export": "Export HTML",
         "install-btn-text": "Install App",
 
         // Sidebar Tabs
-        "tab-blocks": "<i class='fa-solid fa-cubes'></i> Blocks",
-        "tab-styles": "<i class='fa-solid fa-sliders'></i> Styles",
-        "tab-settings": "<i class='fa-solid fa-gear'></i> Page",
+        "tab-blocks": "Blocks",
+        "tab-styles": "Styles",
+        "tab-settings": "Page",
 
         // Panel: Blocks Library
         "blocks-lib-title": "Block Library",
@@ -160,6 +167,13 @@ const translations = {
         "label-content-customization": "Block Content Customization",
         "label-showcase-image": "Showcase Image URL",
 
+        // Dynamic Inspector Fields
+        "lbl-btn-url": "Button Link URL (CTA URL)",
+        "lbl-nav-links-url": "Menu Link URLs",
+        "lbl-form-action": "Form Submit Endpoint (Action URL)",
+        "lbl-plan-urls": "Plan Button URLs",
+        "lbl-logo-text": "Logo Brand Name",
+
         // Panel: Page Settings
         "settings-title": "Page Settings",
         "settings-desc": "Configure SEO metadata and global parameters",
@@ -183,10 +197,10 @@ const translations = {
         "modal-sb-url": "Supabase Project URL",
         "modal-sb-key": "Supabase Anon Key",
         "modal-sb-save-desc": "Save Current Design to Database",
-        "modal-btn-save": "<i class='fa-solid fa-floppy-disk'></i> Save Project",
-        "modal-btn-load": "<i class='fa-solid fa-folder-open'></i> Load Saved Project",
-        "modal-badge-disconnected": "<i class='fa-solid fa-circle-dot'></i> Not Connected",
-        "modal-badge-connected": "<i class='fa-solid fa-circle-dot'></i> Connected",
+        "modal-btn-save": "Save Project",
+        "modal-btn-load": "Load Saved Project",
+        "modal-badge-disconnected": "Not Connected",
+        "modal-badge-connected": "Connected",
         "modal-btn-connect": "Connect Database"
     }
 };
@@ -196,125 +210,50 @@ function applyLanguage(lang) {
     const t = translations[lang];
     if (!t) return;
 
-    // Apply header translations
-    document.querySelector(".logo-text").innerHTML = t["logo-text"];
-    document.getElementById("btn-preview").innerHTML = editorMode === "edit" ? t["btn-preview"] : t["btn-edit"];
-    document.getElementById("btn-supabase").innerHTML = t["btn-cloud-save"];
-    document.getElementById("btn-export").innerHTML = t["btn-export"];
-    document.getElementById("lbl-install-btn").textContent = t["install-btn-text"];
+    // Apply structured i18n translation attributes
+    document.querySelectorAll("[data-i18n]").forEach(elem => {
+        const key = elem.getAttribute("data-i18n");
+        if (t[key]) {
+            if (key === "logo-text") {
+                elem.innerHTML = t[key];
+            } else if (elem.querySelector("i")) {
+                // Keep the icon tag inside the button/element
+                const icon = elem.querySelector("i").outerHTML;
+                elem.innerHTML = `${icon} <span>${t[key]}</span>`;
+            } else {
+                elem.textContent = t[key];
+            }
+        }
+    });
 
-    // Sidebar tab buttons
-    document.querySelector(".tab-btn[data-tab='blocks']").innerHTML = t["tab-blocks"];
-    document.querySelector(".tab-btn[data-tab='styles']").innerHTML = t["tab-styles"];
-    document.querySelector(".tab-btn[data-tab='settings']").innerHTML = t["tab-settings"];
-
-    // Blocks panel headers
-    document.querySelector("#panel-blocks .panel-header h3").textContent = t["blocks-lib-title"];
-    document.querySelector("#panel-blocks .panel-header p").textContent = t["blocks-lib-desc"];
-
-    // Category names
-    const catTitles = document.querySelectorAll(".category-title");
-    if (catTitles.length >= 6) {
-        catTitles[0].textContent = t["cat-nav"];
-        catTitles[1].textContent = t["cat-hero"];
-        catTitles[2].textContent = t["cat-features"];
-        catTitles[3].textContent = t["cat-social"];
-        catTitles[4].textContent = t["cat-contact"];
-        catTitles[5].textContent = t["cat-footers"];
-    }
-
-    // Individual block list items
-    document.querySelector(".block-item[data-template='navbar'] .block-name").textContent = t["block-navbar"];
-    document.querySelector(".block-item[data-template='hero-gradient'] .block-name").textContent = t["block-hero-gradient"];
-    document.querySelector(".block-item[data-template='hero-split'] .block-name").textContent = t["block-hero-split"];
-    document.querySelector(".block-item[data-template='features-3col'] .block-name").textContent = t["block-features-3col"];
-    document.querySelector(".block-item[data-template='feature-split-left'] .block-name").textContent = t["block-feature-split-left"];
-    document.querySelector(".block-item[data-template='testimonials'] .block-name").textContent = t["block-testimonials"];
-    document.querySelector(".block-item[data-template='pricing'] .block-name").textContent = t["block-pricing"];
-    document.querySelector(".block-item[data-template='cta-center'] .block-name").textContent = t["block-cta-center"];
-    document.querySelector(".block-item[data-template='contact-simple'] .block-name").textContent = t["block-contact-simple"];
-    document.querySelector(".block-item[data-template='footer-simple'] .block-name").textContent = t["block-footer-simple"];
-
-    // Empty state
-    document.querySelector("#empty-state h2").textContent = t["empty-state-title"];
-    document.querySelector("#empty-state p").textContent = t["empty-state-desc"];
-    document.querySelector("#empty-state button").textContent = t["empty-state-btn"];
-
-    // Styles inspector panel
-    document.querySelector(".no-selection-message h4").textContent = t["no-selection-title"];
-    document.querySelector(".no-selection-message p").textContent = t["no-selection-desc"];
-    
-    // Form labels in inspector panel
-    const styleLabels = document.querySelectorAll("#panel-styles .control-label");
-    if (styleLabels.length >= 4) {
-        styleLabels[0].textContent = t["label-bg-style"];
-        styleLabels[1].textContent = t["label-text-colors"];
-        styleLabels[2].textContent = t["label-padding"];
-        styleLabels[3].textContent = t["label-content-customization"];
-    }
-    
-    document.querySelector(".bg-mode-selector .mode-btn[data-bg-mode='color']").textContent = t["btn-bg-color"];
-    document.querySelector(".bg-mode-selector .mode-btn[data-bg-mode='gradient']").textContent = t["btn-bg-gradient"];
-    document.querySelector(".bg-mode-selector .mode-btn[data-bg-mode='image']").textContent = t["btn-bg-image"];
-
-    const subLabels = document.querySelectorAll("#panel-styles .sub-label");
-    if (subLabels.length >= 4) {
-        subLabels[0].textContent = t["label-bg-color"];
-        subLabels[1].textContent = t["label-preset-gradients"];
-        subLabels[2].textContent = t["label-bg-image-url"];
-        subLabels[3].textContent = t["label-text-color-primary"];
-    }
-
-    // Page settings
-    document.getElementById("lbl-page-settings").textContent = t["lbl-page-settings"];
-    document.getElementById("lbl-page-settings-desc").textContent = t["lbl-page-settings-desc"];
-    
-    const settingsLabels = document.querySelectorAll("#panel-settings .control-label");
-    if (settingsLabels.length >= 4) {
-        settingsLabels[0].textContent = t["label-editor-language"];
-        settingsLabels[1].textContent = t["label-page-title"];
-        settingsLabels[2].textContent = t["label-meta-desc"];
-        settingsLabels[3].textContent = t["label-fonts-settings"];
-    }
-    
-    document.querySelector("#panel-settings .control-group:nth-child(2) .field-hint").textContent = t["hint-page-title"];
-    document.querySelector("#panel-settings .control-group:nth-child(3) .field-hint").textContent = t["hint-meta-desc"];
-    
-    const settingsSubLabels = document.querySelectorAll("#panel-settings .sub-label");
-    if (settingsSubLabels.length >= 2) {
-        settingsSubLabels[0].textContent = t["label-font-headings"];
-        settingsSubLabels[1].textContent = t["label-font-body"];
-    }
-
-    // Modal
-    document.querySelector(".modal-title-wrapper h3").textContent = t["modal-sb-title"];
-    document.querySelector(".modal-body p").textContent = t["modal-sb-desc"];
-    
-    const modalLabels = document.querySelectorAll(".modal-body .form-label");
-    if (modalLabels.length >= 3) {
-        modalLabels[0].fromTextContent = t["modal-sb-url"];
-        modalLabels[1].textContent = t["modal-sb-key"];
-        modalLabels[2].textContent = t["modal-sb-save-desc"];
-    }
-    
-    document.getElementById("btn-save-project").innerHTML = t["modal-btn-save"];
-    document.getElementById("btn-load-project").innerHTML = t["modal-btn-load"];
-    document.getElementById("btn-connect-supabase").textContent = t["modal-btn-connect"];
-
-    // Update DB status badge text
-    const badge = document.getElementById("db-status-badge");
-    if (badge.classList.contains("badge-connected")) {
-        badge.innerHTML = t["modal-badge-connected"];
-    } else {
-        badge.innerHTML = t["modal-badge-disconnected"];
-    }
-
-    // Update Header Auto save message text
+    // Special updates (Status text)
     const statusText = document.querySelector("#save-status .status-text");
-    if (statusText.textContent.includes("local") || statusText.textContent.includes("Черновик")) {
-        statusText.textContent = t["status-saved"];
-    } else if (statusText.textContent.includes("Supabase")) {
-        statusText.textContent = t["status-cloud-saved"];
+    if (statusText) {
+        if (statusText.textContent.includes("local") || statusText.textContent.includes("локально")) {
+            statusText.textContent = t["status-saved"];
+        } else if (statusText.textContent.includes("Supabase") || statusText.textContent.includes("облако")) {
+            statusText.textContent = t["status-cloud-saved"];
+        }
+    }
+
+    // Update DB status badge
+    const badge = document.getElementById("db-status-badge");
+    if (badge) {
+        if (badge.classList.contains("badge-connected")) {
+            badge.innerHTML = `<i class="fa-solid fa-circle-dot"></i> ` + t["modal-badge-connected"];
+        } else {
+            badge.innerHTML = `<i class="fa-solid fa-circle-dot"></i> ` + t["modal-badge-disconnected"];
+        }
+    }
+
+    // Update viewport dimensions text
+    const viewportDimText = document.getElementById("viewport-dimensions");
+    const viewportContainer = document.getElementById("viewport-container");
+    if (viewportDimText && viewportContainer) {
+        const size = viewportContainer.getAttribute("data-size") || "desktop";
+        if (size === "desktop") viewportDimText.textContent = lang === 'ru' ? "Десктоп (100%)" : "Desktop (100%)";
+        if (size === "tablet") viewportDimText.textContent = lang === 'ru' ? "Планшет (768px)" : "Tablet (768px)";
+        if (size === "mobile") viewportDimText.textContent = lang === 'ru' ? "Мобильный (375px)" : "Mobile (375px)";
     }
 }
 
@@ -324,7 +263,7 @@ let projectState = {
     description: "Discover our beautiful service. High quality and conversion-optimized blocks built in minutes.",
     fontHeadings: "'Outfit', sans-serif",
     fontBody: "'Inter', sans-serif",
-    blocks: [] // Array of active block objects
+    blocks: [] 
 };
 
 let selectedBlockId = null;
@@ -337,9 +276,13 @@ const blockTemplates = {
         defaultData: {
             brand: "SiteForge",
             link1: "Features",
+            link1Url: "#features",
             link2: "Pricing",
+            link2Url: "#pricing",
             link3: "Reviews",
+            link3Url: "#reviews",
             ctaText: "Get Started",
+            ctaLink: "#cta",
             bgColor: "#ffffff",
             textColor: "#1f2937",
             padding: "20",
@@ -351,11 +294,11 @@ const blockTemplates = {
                 <nav class="block-navbar-container" style="background: ${data.bgColor}; color: ${data.textColor}; padding: ${data.padding}px 40px;">
                     <a href="#" class="block-navbar-brand" style="color: ${data.textColor};" ${isEditable} data-field="brand">${data.brand}</a>
                     <div class="block-navbar-links">
-                        <a href="#" class="block-navbar-link" style="color: ${data.textColor}cc;" ${isEditable} data-field="link1">${data.link1}</a>
-                        <a href="#" class="block-navbar-link" style="color: ${data.textColor}cc;" ${isEditable} data-field="link2">${data.link2}</a>
-                        <a href="#" class="block-navbar-link" style="color: ${data.textColor}cc;" ${isEditable} data-field="link3">${data.link3}</a>
+                        <a href="${data.link1Url}" class="block-navbar-link" style="color: ${data.textColor}cc;" ${isEditable} data-field="link1">${data.link1}</a>
+                        <a href="${data.link2Url}" class="block-navbar-link" style="color: ${data.textColor}cc;" ${isEditable} data-field="link2">${data.link2}</a>
+                        <a href="${data.link3Url}" class="block-navbar-link" style="color: ${data.textColor}cc;" ${isEditable} data-field="link3">${data.link3}</a>
                     </div>
-                    <a href="#" class="block-navbar-cta" ${isEditable} data-field="ctaText">${data.ctaText}</a>
+                    <a href="${data.ctaLink}" class="block-navbar-cta" ${isEditable} data-field="ctaText">${data.ctaText}</a>
                 </nav>
             `;
         }
@@ -367,6 +310,7 @@ const blockTemplates = {
             title: "Forge High-Conversion Landing Pages",
             subtitle: "Create beautiful, conversion-optimized sections in minutes. Sell them or host them for free on Vercel.",
             ctaText: "Start Free Trial",
+            ctaLink: "#start",
             bgColor: "radial-gradient(circle at top right, rgba(139, 92, 246, 0.08), transparent 40%), radial-gradient(circle at bottom left, rgba(236, 72, 153, 0.08), transparent 40%)",
             textColor: "#1f2937",
             padding: "100",
@@ -379,7 +323,7 @@ const blockTemplates = {
                     <span class="hero-tagline" ${isEditable} data-field="tagline">${data.tagline}</span>
                     <h1 class="hero-title" style="color: ${data.textColor};" ${isEditable} data-field="title">${data.title}</h1>
                     <p class="hero-subtitle" style="color: ${data.textColor}bb;" ${isEditable} data-field="subtitle">${data.subtitle}</p>
-                    <a href="#" class="hero-cta-btn" ${isEditable} data-field="ctaText">${data.ctaText}</a>
+                    <a href="${data.ctaLink}" class="hero-cta-btn" ${isEditable} data-field="ctaText">${data.ctaText}</a>
                 </div>
             `;
         }
@@ -391,7 +335,8 @@ const blockTemplates = {
             title: "Smart Decisions, Faster Growth",
             subtitle: "Understand your users, optimize conversion paths, and grow your revenue with premium templates.",
             ctaText: "Explore Features",
-            imageUrl: "./hero-mockup.jpg", // Pre-configured local image asset
+            ctaLink: "#explore",
+            imageUrl: "./hero-mockup.jpg", 
             bgColor: "#ffffff",
             textColor: "#1f2937",
             padding: "100",
@@ -405,7 +350,7 @@ const blockTemplates = {
                         <span class="hero-tagline" ${isEditable} data-field="tagline">${data.tagline}</span>
                         <h1 class="hero-title" style="color: ${data.textColor};" ${isEditable} data-field="title">${data.title}</h1>
                         <p class="hero-subtitle" style="color: ${data.textColor}bb;" ${isEditable} data-field="subtitle">${data.subtitle}</p>
-                        <a href="#" class="hero-cta-btn" ${isEditable} data-field="ctaText">${data.ctaText}</a>
+                        <a href="${data.ctaLink}" class="hero-cta-btn" ${isEditable} data-field="ctaText">${data.ctaText}</a>
                     </div>
                     <div class="hero-split-right">
                         <img src="${data.imageUrl}" class="hero-split-img" alt="Hero Mockup" data-img-field="imageUrl">
@@ -467,7 +412,7 @@ const blockTemplates = {
             bullet1: "Live Editing & Instant Preview",
             bullet2: "Clean Exportable Code",
             bullet3: "Google Fonts Integration",
-            imageUrl: "./hero-mockup.jpg", // Pre-configured local image asset
+            imageUrl: "./hero-mockup.jpg", 
             bgColor: "#ffffff",
             textColor: "#1f2937",
             padding: "80",
@@ -572,10 +517,13 @@ const blockTemplates = {
             subtitle: "Choose the perfect plan for your business needs.",
             plan1Name: "Starter",
             plan1Price: "$9",
+            plan1Link: "#starter",
             plan2Name: "Pro",
             plan2Price: "$29",
+            plan2Link: "#pro",
             plan3Name: "Enterprise",
             plan3Price: "$99",
+            plan3Link: "#enterprise",
             bgColor: "#ffffff",
             textColor: "#1f2937",
             padding: "80",
@@ -598,7 +546,7 @@ const blockTemplates = {
                                 <div class="pricing-feature"><i class="fa-solid fa-check"></i> Standard Analytics</div>
                                 <div class="pricing-feature"><i class="fa-solid fa-check"></i> Community Support</div>
                             </div>
-                            <a href="#" class="pricing-btn">Choose Plan</a>
+                            <a href="${data.plan1Link}" class="pricing-btn">Choose Plan</a>
                         </div>
                         <div class="pricing-card popular">
                             <span class="pricing-badge">Popular</span>
@@ -609,7 +557,7 @@ const blockTemplates = {
                                 <div class="pricing-feature"><i class="fa-solid fa-check"></i> Real-time Analytics</div>
                                 <div class="pricing-feature"><i class="fa-solid fa-check"></i> Priority Email Support</div>
                             </div>
-                            <a href="#" class="pricing-btn">Choose Plan</a>
+                            <a href="${data.plan2Link}" class="pricing-btn">Choose Plan</a>
                         </div>
                         <div class="pricing-card">
                             <div class="pricing-name" ${isEditable} data-field="plan3Name">${data.plan3Name}</div>
@@ -619,7 +567,7 @@ const blockTemplates = {
                                 <div class="pricing-feature"><i class="fa-solid fa-check"></i> Advanced Reports API</div>
                                 <div class="pricing-feature"><i class="fa-solid fa-check"></i> 24/7 Dedicated Support</div>
                             </div>
-                            <a href="#" class="pricing-btn">Choose Plan</a>
+                            <a href="${data.plan3Link}" class="pricing-btn">Choose Plan</a>
                         </div>
                     </div>
                 </div>
@@ -632,6 +580,7 @@ const blockTemplates = {
             title: "Ready to accelerate your growth?",
             subtitle: "Join over 10,000+ creators building fast, high-converting websites.",
             ctaText: "Get Started Now",
+            ctaLink: "#cta",
             bgColor: "linear-gradient(135deg, #111827 0%, #1f2937 100%)",
             textColor: "#ffffff",
             padding: "80",
@@ -645,7 +594,7 @@ const blockTemplates = {
                     <p class="cta-desc" style="color: ${data.textColor}bb;" ${isEditable} data-field="subtitle">${data.subtitle}</p>
                     <div class="cta-form">
                         <input type="email" placeholder="Enter your email" class="cta-input" readonly>
-                        <button class="cta-submit" ${isEditable} data-field="ctaText">${data.ctaText}</button>
+                        <a href="${data.ctaLink}" class="cta-submit" style="display: flex; align-items: center; justify-content: center; text-decoration: none;" ${isEditable} data-field="ctaText">${data.ctaText}</a>
                     </div>
                 </div>
             `;
@@ -657,6 +606,7 @@ const blockTemplates = {
             title: "Get in touch",
             subtitle: "Have questions? We would love to hear from you. Send us a message.",
             ctaText: "Send Message",
+            formAction: "https://formspree.io/f/your-id", // default form endpoint
             bgColor: "#ffffff",
             textColor: "#1f2937",
             padding: "80",
@@ -670,12 +620,12 @@ const blockTemplates = {
                         <h3 style="color: ${data.textColor};" ${isEditable} data-field="title">${data.title}</h3>
                         <p style="color: ${data.textColor}bb;" ${isEditable} data-field="subtitle">${data.subtitle}</p>
                     </div>
-                    <form class="contact-form-el" onsubmit="event.preventDefault()">
+                    <form class="contact-form-el" action="${data.formAction}" method="POST" onsubmit="${mode === 'edit' ? 'event.preventDefault()' : ''}">
                         <div class="form-row">
-                            <div class="form-col"><input type="text" placeholder="Name" class="contact-input-el" readonly></div>
-                            <div class="form-col"><input type="email" placeholder="Email" class="contact-input-el" readonly></div>
+                            <div class="form-col"><input type="text" name="name" placeholder="Name" class="contact-input-el" required ${mode === 'edit' ? 'readonly' : ''}></div>
+                            <div class="form-col"><input type="email" name="email" placeholder="Email" class="contact-input-el" required ${mode === 'edit' ? 'readonly' : ''}></div>
                         </div>
-                        <textarea placeholder="Your Message" rows="4" class="contact-input-el" readonly></textarea>
+                        <textarea name="message" placeholder="Your Message" rows="4" class="contact-input-el" required ${mode === 'edit' ? 'readonly' : ''}></textarea>
                         <button class="hero-cta-btn" style="border: none; cursor: pointer; align-self: flex-start;" ${isEditable} data-field="ctaText">${data.ctaText}</button>
                     </form>
                 </div>
@@ -818,6 +768,15 @@ function renderCanvas() {
             selectBlock(block.id);
         });
 
+        // Prevent navigation for links in edit mode
+        blockWrapper.querySelectorAll("a").forEach(a => {
+            a.addEventListener("click", (e) => {
+                if (editorMode === "edit") {
+                    e.preventDefault();
+                }
+            });
+        });
+
         // Inline text editable listener
         if (editorMode === "edit") {
             blockWrapper.querySelectorAll("[contenteditable='true']").forEach(elem => {
@@ -885,7 +844,6 @@ function selectBlock(id) {
     document.getElementById("tab-btn-styles").click();
 
     const blockDef = blockTemplates[block.template];
-    // Dynamic block titles translated from dictionary
     document.getElementById("inspector-block-title").textContent = translations[currentLang]["block-" + block.template] || blockDef.name;
 
     // Load colors & values
@@ -909,17 +867,19 @@ function selectBlock(id) {
     // Display appropriate background configuration tab
     toggleBgModeControls(bgMode, block.data.bgColor);
 
-    // Render custom content customization properties (e.g. Image URL)
+    // Render custom content customization properties (e.g. Image URL, CTA Link URLs)
     const customFields = document.getElementById("custom-block-fields");
     customFields.innerHTML = "";
 
+    const t = translations[currentLang];
+
+    // Image URL field
     if (block.data.imageUrl !== undefined) {
         const div = document.createElement("div");
         div.className = "control-group";
         div.innerHTML = `
-            <label class="sub-label">${translations[currentLang]["label-showcase-image"]}</label>
+            <label class="sub-label">${t["label-showcase-image"]}</label>
             <input type="text" id="input-custom-image-url" class="text-input" value="${block.data.imageUrl}">
-            <p class="field-hint">${currentLang === 'ru' ? 'Кликните на картинку на холсте напрямую или измените ссылку тут' : 'Click the image in the canvas directly or edit URL here'}</p>
         `;
         customFields.appendChild(div);
 
@@ -928,6 +888,74 @@ function selectBlock(id) {
             saveDraft();
             renderCanvas();
         });
+    }
+
+    // Dynamic CTA Link URL fields
+    if (block.data.ctaLink !== undefined) {
+        const div = document.createElement("div");
+        div.className = "control-group";
+        div.innerHTML = `
+            <label class="sub-label">${t["lbl-btn-url"]}</label>
+            <input type="text" id="input-cta-link" class="text-input" placeholder="https://..." value="${block.data.ctaLink}">
+        `;
+        customFields.appendChild(div);
+
+        document.getElementById("input-cta-link").addEventListener("input", (e) => {
+            block.data.ctaLink = e.target.value;
+            saveDraft();
+            renderCanvas();
+        });
+    }
+
+    // Contact Form Endpoint field
+    if (block.data.formAction !== undefined) {
+        const div = document.createElement("div");
+        div.className = "control-group";
+        div.innerHTML = `
+            <label class="sub-label">${t["lbl-form-action"]}</label>
+            <input type="text" id="input-form-action" class="text-input" placeholder="https://formspree.io/..." value="${block.data.formAction}">
+        `;
+        customFields.appendChild(div);
+
+        document.getElementById("input-form-action").addEventListener("input", (e) => {
+            block.data.formAction = e.target.value;
+            saveDraft();
+            renderCanvas();
+        });
+    }
+
+    // Header Navbar Navigation links editing
+    if (block.template === "navbar") {
+        const div = document.createElement("div");
+        div.className = "control-group";
+        div.innerHTML = `
+            <label class="sub-label">${t["lbl-nav-links-url"]} (1, 2, 3)</label>
+            <input type="text" id="input-nav-l1" class="text-input" placeholder="Link 1" value="${block.data.link1Url}" style="margin-bottom: 6px;">
+            <input type="text" id="input-nav-l2" class="text-input" placeholder="Link 2" value="${block.data.link2Url}" style="margin-bottom: 6px;">
+            <input type="text" id="input-nav-l3" class="text-input" placeholder="Link 3" value="${block.data.link3Url}">
+        `;
+        customFields.appendChild(div);
+
+        document.getElementById("input-nav-l1").addEventListener("input", (e) => { block.data.link1Url = e.target.value; saveDraft(); renderCanvas(); });
+        document.getElementById("input-nav-l2").addEventListener("input", (e) => { block.data.link2Url = e.target.value; saveDraft(); renderCanvas(); });
+        document.getElementById("input-nav-l3").addEventListener("input", (e) => { block.data.link3Url = e.target.value; saveDraft(); renderCanvas(); });
+    }
+
+    // Pricing link editing
+    if (block.template === "pricing") {
+        const div = document.createElement("div");
+        div.className = "control-group";
+        div.innerHTML = `
+            <label class="sub-label">${t["lbl-plan-urls"]} (Plan 1, 2, 3)</label>
+            <input type="text" id="input-price-l1" class="text-input" placeholder="Plan 1 Link" value="${block.data.plan1Link}" style="margin-bottom: 6px;">
+            <input type="text" id="input-price-l2" class="text-input" placeholder="Plan 2 Link" value="${block.data.plan2Link}" style="margin-bottom: 6px;">
+            <input type="text" id="input-price-l3" class="text-input" placeholder="Plan 3 Link" value="${block.data.plan3Link}">
+        `;
+        customFields.appendChild(div);
+
+        document.getElementById("input-price-l1").addEventListener("input", (e) => { block.data.plan1Link = e.target.value; saveDraft(); renderCanvas(); });
+        document.getElementById("input-price-l2").addEventListener("input", (e) => { block.data.plan2Link = e.target.value; saveDraft(); renderCanvas(); });
+        document.getElementById("input-price-l3").addEventListener("input", (e) => { block.data.plan3Link = e.target.value; saveDraft(); renderCanvas(); });
     }
 }
 
@@ -947,7 +975,7 @@ function addBlock(templateName) {
     // Deep clone default data
     const defaultData = JSON.parse(JSON.stringify(blockDef.defaultData));
     
-    // Auto translate some placeholder content on block insertion if language is Russian
+    // Auto-translate block content if browser language is Russian
     if (currentLang === 'ru') {
         if (templateName === 'navbar') {
             defaultData.brand = "СайтФорж";
@@ -1065,12 +1093,9 @@ function initPWAInstallation() {
     const installBtn = document.getElementById("pwa-install-btn");
 
     window.addEventListener('beforeinstallprompt', (e) => {
-        // Prevent Chrome from showing automatic mini-infobar
         e.preventDefault();
-        // Stash the install event
         deferredPrompt = e;
         
-        // Show PWA install button in corner if editor mode is edit
         if (installBtn && editorMode === "edit") {
             installBtn.style.display = "flex";
         }
@@ -1079,14 +1104,9 @@ function initPWAInstallation() {
     if (installBtn) {
         installBtn.addEventListener("click", async () => {
             if (!deferredPrompt) return;
-            
-            // Trigger install popup
             deferredPrompt.prompt();
-            
-            // Wait for user action response
             const { outcome } = await deferredPrompt.userChoice;
             console.log(`[PWA] Install choice outcome: ${outcome}`);
-            
             deferredPrompt = null;
             installBtn.style.display = "none";
         });
@@ -1100,14 +1120,12 @@ function initPWAInstallation() {
 
 // --- LOCALIZATION INITIALIZER ---
 function initLocalization() {
-    // Detect system browser language
     let defaultLang = 'en';
     const userLang = navigator.language || navigator.userLanguage;
     if (userLang && userLang.toLowerCase().startsWith('ru')) {
         defaultLang = 'ru';
     }
 
-    // Load from preference override if existing
     const savedLang = localStorage.getItem("siteforge_lang") || defaultLang;
     
     const selector = document.getElementById("setting-language");
@@ -1120,7 +1138,6 @@ function initLocalization() {
         localStorage.setItem("siteforge_lang", lang);
         applyLanguage(lang);
         
-        // Re-render blocks to update translated names inside inspector
         if (selectedBlockId) {
             selectBlock(selectedBlockId);
         }
@@ -1176,7 +1193,7 @@ function initUIEventListeners() {
             editorMode = "preview";
             document.body.classList.remove("editor-mode");
             document.body.classList.add("preview-mode");
-            btnPreview.innerHTML = `<i class="fa-solid fa-pen-nib"></i> <span>${translations[currentLang]["btn-edit-text"] || "Edit Mode"}</span>`;
+            btnPreview.innerHTML = `<i class="fa-solid fa-pen-nib"></i> <span>${currentLang === 'ru' ? "Режим правки" : "Edit Mode"}</span>`;
             
             if (installBtn) installBtn.style.display = "none";
             deselectBlock();
@@ -1184,7 +1201,7 @@ function initUIEventListeners() {
             editorMode = "edit";
             document.body.classList.remove("preview-mode");
             document.body.classList.add("editor-mode");
-            btnPreview.innerHTML = `<i class="fa-solid fa-eye"></i> <span>${translations[currentLang]["btn-preview-text"] || "Preview"}</span>`;
+            btnPreview.innerHTML = `<i class="fa-solid fa-eye"></i> <span>${currentLang === 'ru' ? "Предпросмотр" : "Preview"}</span>`;
             
             if (installBtn && deferredPrompt) installBtn.style.display = "flex";
         }
@@ -1269,7 +1286,7 @@ function initUIEventListeners() {
             block.data.bgMode = mode;
             let defaultBg = "#ffffff";
             if (mode === "gradient") defaultBg = "linear-gradient(135deg, #667eea 0%, #764ba2 100%)";
-            if (mode === "image") defaultBg = "url('./hero-mockup.jpg')"; // Use our local premium image
+            if (mode === "image") defaultBg = "url('./hero-mockup.jpg')"; 
             
             block.data.bgColor = defaultBg;
             inputBgColorText.value = defaultBg;
@@ -1361,7 +1378,7 @@ async function exportHtmlWebsite() {
     projectState.blocks.forEach(block => {
         const blockDef = blockTemplates[block.template];
         if (blockDef) {
-            // Render block in preview mode (removes contenteditable)
+            // Render block in preview mode (removes contenteditable, enables links/form submits)
             let rendered = blockDef.render(block.id, block.data, "preview");
             compiledBlocksHtml += `\n<!-- Block: ${blockDef.name} -->\n` + rendered.trim() + "\n";
         }
