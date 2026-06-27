@@ -77,11 +77,12 @@ function initializeSupabase(url, key, alertSuccess = false) {
             localStorage.setItem("siteforge_supabase_key", key);
 
             // Update badge UI
-            badge.className = "connection-status badge-connected";
+            const welcomeBadge = document.getElementById("welcome-db-badge");
+            [badge, welcomeBadge].forEach(b => { if (b) b.className = "connection-status badge-connected"; });
             if (typeof applyLanguage === "function") {
                 applyLanguage(currentLang);
             } else {
-                badge.innerHTML = `<i class="fa-solid fa-circle-dot"></i> Connected`;
+                [badge, welcomeBadge].forEach(b => { if (b) b.innerHTML = `<i class="fa-solid fa-circle-dot"></i> Connected`; });
             }
             
             statusText.textContent = "Connected to Supabase Cloud";
@@ -93,8 +94,13 @@ function initializeSupabase(url, key, alertSuccess = false) {
             }
         } catch (e) {
             console.error("Failed to init Supabase client", e);
-            badge.className = "connection-status badge-disconnected";
-            badge.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> Error`;
+            const welcomeBadge = document.getElementById("welcome-db-badge");
+            [badge, welcomeBadge].forEach(b => {
+                if (b) {
+                    b.className = "connection-status badge-disconnected";
+                    b.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> Error`;
+                }
+            });
             if (alertSuccess) alert("Connection failed: " + e.message);
         }
     };

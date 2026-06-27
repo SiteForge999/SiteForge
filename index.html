@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SiteForge — High-Conversion Landing Page Builder</title>
+    <title>AppForge — Interactive Mobile App UI & Layout Designer</title>
     <!-- PWA & Favicon -->
     <link rel="manifest" href="manifest.json">
     <link rel="icon" type="image/jpeg" href="logo-icon.jpg">
@@ -27,7 +27,7 @@
         <div class="header-left">
             <div class="logo">
                 <i class="fa-solid fa-wand-magic-sparkles logo-icon"></i>
-                <span class="logo-text" data-i18n="logo-text">Site<span class="logo-accent">Forge</span></span>
+                <span class="logo-text" data-i18n="logo-text">App<span class="logo-accent">Forge</span></span>
             </div>
             <div class="status-indicator" id="save-status">
                 <i class="fa-solid fa-cloud-check status-icon"></i>
@@ -37,14 +37,14 @@
 
         <!-- Viewport Switcher -->
         <div class="viewport-controls">
-            <button class="viewport-btn active" data-viewport="desktop" title="Desktop View">
-                <i class="fa-solid fa-desktop"></i>
+            <button class="viewport-btn active" data-viewport="mobile" title="Mobile App View">
+                <i class="fa-solid fa-mobile-screen-button"></i>
             </button>
-            <button class="viewport-btn" data-viewport="tablet" title="Tablet View">
+            <button class="viewport-btn" data-viewport="tablet" title="Tablet UI View">
                 <i class="fa-solid fa-tablet-screen-button"></i>
             </button>
-            <button class="viewport-btn" data-viewport="mobile" title="Mobile View">
-                <i class="fa-solid fa-mobile-screen-button"></i>
+            <button class="viewport-btn" data-viewport="desktop" title="Desktop App View">
+                <i class="fa-solid fa-desktop"></i>
             </button>
         </div>
 
@@ -57,11 +57,14 @@
             <button class="btn btn-secondary" id="btn-preview" title="Toggle Preview Mode">
                 <i class="fa-solid fa-eye"></i> <span data-i18n="btn-preview">Preview</span>
             </button>
-            <button class="btn btn-secondary" id="btn-supabase" title="Connect / Save to Cloud">
+            <button class="btn btn-secondary" id="btn-supabase" title="Connect Cloud Database">
                 <i class="fa-solid fa-cloud"></i> <span data-i18n="btn-cloud-save">Cloud Save</span>
             </button>
-            <button class="btn btn-primary" id="btn-export" title="Export Clean HTML">
+            <button class="btn btn-secondary" id="btn-export" title="Export Clean HTML">
                 <i class="fa-solid fa-download"></i> <span data-i18n="btn-export">Export HTML</span>
+            </button>
+            <button class="btn btn-primary" id="btn-header-save" title="Save Project Design">
+                <i class="fa-solid fa-floppy-disk"></i> <span data-i18n="btn-save">Save</span>
             </button>
         </div>
     </header>
@@ -69,7 +72,7 @@
     <div class="main-editor-container">
         <!-- Sidebar Controls -->
         <aside class="editor-sidebar">
-            <!-- Sidebar Tabs (Now featuring Help tab) -->
+            <!-- Sidebar Tabs -->
             <div class="sidebar-tabs">
                 <button class="tab-btn active" data-tab="blocks" data-i18n="tab-blocks">
                     <i class="fa-solid fa-cubes"></i> Blocks
@@ -87,92 +90,92 @@
 
             <!-- Tab Panels Content -->
             <div class="sidebar-content">
-                <!-- Panel 1: Blocks Library -->
+                <!-- Panel 1: Blocks Library (App UI Components) -->
                 <div class="tab-panel active" id="panel-blocks">
                     <div class="panel-header">
-                        <h3 data-i18n="blocks-lib-title">Block Library</h3>
-                        <p data-i18n="blocks-lib-desc">Click blocks to add them to your website canvas</p>
+                        <h3 data-i18n="blocks-lib-title">App UI Components</h3>
+                        <p data-i18n="blocks-lib-desc">Click widgets to construct your mobile app screens</p>
                     </div>
 
                     <div class="block-categories">
-                        <!-- Navigation Blocks -->
+                        <!-- Navigation Components -->
                         <div class="category-group">
-                            <div class="category-title" data-i18n="cat-nav">Navigation</div>
+                            <div class="category-title" data-i18n="cat-nav">Navigation & Tabs</div>
                             <div class="blocks-grid">
                                 <div class="block-item" data-template="navbar">
                                     <div class="block-icon"><i class="fa-solid fa-window-minimize"></i></div>
-                                    <span class="block-name" data-i18n="block-navbar">Classic Header</span>
+                                    <span class="block-name" data-i18n="block-navbar">App Header</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Hero Blocks -->
+                        <!-- Onboarding & Welcome Screens -->
                         <div class="category-group">
-                            <div class="category-title" data-i18n="cat-hero">Hero Sections</div>
+                            <div class="category-title" data-i18n="cat-hero">App Screens</div>
                             <div class="blocks-grid">
                                 <div class="block-item" data-template="hero-gradient">
                                     <div class="block-icon"><i class="fa-solid fa-image-portrait"></i></div>
-                                    <span class="block-name" data-i18n="block-hero-gradient">Modern Gradient</span>
+                                    <span class="block-name" data-i18n="block-hero-gradient">Welcome Screen</span>
                                 </div>
                                 <div class="block-item" data-template="hero-split">
                                     <div class="block-icon"><i class="fa-solid fa-columns"></i></div>
-                                    <span class="block-name" data-i18n="block-hero-split">Split Showcase</span>
+                                    <span class="block-name" data-i18n="block-hero-split">Dashboard Card</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Features Blocks -->
+                        <!-- Lists & Cards Grid -->
                         <div class="category-group">
-                            <div class="category-title" data-i18n="cat-features">Features & Grid</div>
+                            <div class="category-title" data-i18n="cat-features">Grids & Lists</div>
                             <div class="blocks-grid">
                                 <div class="block-item" data-template="features-3col">
                                     <div class="block-icon"><i class="fa-solid fa-table-cells-large"></i></div>
-                                    <span class="block-name" data-i18n="block-features-3col">3-Col Features</span>
+                                    <span class="block-name" data-i18n="block-features-3col">App Grid Menu</span>
                                 </div>
                                 <div class="block-item" data-template="feature-split-left">
                                     <div class="block-icon"><i class="fa-solid fa-left-right"></i></div>
-                                    <span class="block-name" data-i18n="block-feature-split-left">Media & Text</span>
+                                    <span class="block-name" data-i18n="block-feature-split-left">Media Feed Card</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Testimonials & Reviews -->
+                        <!-- Subscription & Reviews -->
                         <div class="category-group">
-                            <div class="category-title" data-i18n="cat-social">Social Proof</div>
+                            <div class="category-title" data-i18n="cat-social">Pricing & Social</div>
                             <div class="blocks-grid">
                                 <div class="block-item" data-template="testimonials">
                                     <div class="block-icon"><i class="fa-solid fa-quote-left"></i></div>
-                                    <span class="block-name" data-i18n="block-testimonials">Reviews Grid</span>
+                                    <span class="block-name" data-i18n="block-testimonials">Reviews Feed</span>
                                 </div>
                                 <div class="block-item" data-template="pricing">
                                     <div class="block-icon"><i class="fa-solid fa-tags"></i></div>
-                                    <span class="block-name" data-i18n="block-pricing">Pricing Cards</span>
+                                    <span class="block-name" data-i18n="block-pricing">In-App Subscriptions</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Forms & Contact -->
+                        <!-- Input Screens -->
                         <div class="category-group">
-                            <div class="category-title" data-i18n="cat-contact">Contact & Callout</div>
+                            <div class="category-title" data-i18n="cat-contact">Interaction Banners</div>
                             <div class="blocks-grid">
                                 <div class="block-item" data-template="cta-center">
                                     <div class="block-icon"><i class="fa-solid fa-bullhorn"></i></div>
-                                    <span class="block-name" data-i18n="block-cta-center">Action Callout</span>
+                                    <span class="block-name" data-i18n="block-cta-center">Newsletter Banner</span>
                                 </div>
                                 <div class="block-item" data-template="contact-simple">
                                     <div class="block-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
-                                    <span class="block-name" data-i18n="block-contact-simple">Contact Form</span>
+                                    <span class="block-name" data-i18n="block-contact-simple">Support Ticket form</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Footers -->
+                        <!-- Bottom Nav Bars -->
                         <div class="category-group">
-                            <div class="category-title" data-i18n="cat-footers">Footers</div>
+                            <div class="category-title" data-i18n="cat-footers">Tab Menus</div>
                             <div class="blocks-grid">
                                 <div class="block-item" data-template="footer-simple">
                                     <div class="block-icon"><i class="fa-solid fa-square-minus"></i></div>
-                                    <span class="block-name" data-i18n="block-footer-simple">Footer Simple</span>
+                                    <span class="block-name" data-i18n="block-footer-simple">Bottom Navigation</span>
                                 </div>
                             </div>
                         </div>
@@ -184,18 +187,18 @@
                 <div class="tab-panel" id="panel-styles">
                     <div class="no-selection-message">
                         <i class="fa-solid fa-mouse-pointer pointer-icon"></i>
-                        <h4 data-i18n="no-selection-title">No Block Selected</h4>
-                        <p data-i18n="no-selection-desc">Click on any block in the canvas to customize its colors, spacing, and properties.</p>
+                        <h4 data-i18n="no-selection-title">No Element Selected</h4>
+                        <p data-i18n="no-selection-desc">Click on any widget in the mobile canvas to customize its colors, spacing, and properties.</p>
                     </div>
 
                     <div class="inspector-controls" style="display: none;">
                         <div class="panel-header">
                             <h3 id="inspector-block-title" data-i18n="inspector-block-title">Block Properties</h3>
-                            <p data-i18n="inspector-block-desc">Customize the selected block below</p>
+                            <p data-i18n="inspector-block-desc">Customize the selected widget below</p>
                         </div>
 
                         <div class="inspector-section">
-                            <label class="control-label" data-i18n="label-bg-style">Background Style</label>
+                            <label class="control-label" data-i18n="label-bg-style">Widget Background</label>
                             <div class="bg-mode-selector">
                                 <button class="mode-btn active" data-bg-mode="color" data-i18n="btn-bg-color">Color</button>
                                 <button class="mode-btn" data-bg-mode="gradient" data-i18n="btn-bg-gradient">Gradient</button>
@@ -241,7 +244,7 @@
                         </div>
 
                         <div class="inspector-section">
-                            <label class="control-label" data-i18n="label-padding">Padding (Vertical Spacing)</label>
+                            <label class="control-label" data-i18n="label-padding">Widget Spacing (Padding)</label>
                             <div class="control-group">
                                 <div class="range-slider-wrapper">
                                     <input type="range" id="input-padding" min="0" max="150" step="10" value="60">
@@ -251,7 +254,7 @@
                         </div>
 
                         <div class="inspector-section">
-                            <label class="control-label" data-i18n="label-content-customization">Block Content Customization</label>
+                            <label class="control-label" data-i18n="label-content-customization">Widget Customization</label>
                             <div id="custom-block-fields">
                                 <!-- Dynamic fields depending on selected block will be rendered here -->
                             </div>
@@ -262,8 +265,8 @@
                 <!-- Panel 3: Settings Panel -->
                 <div class="tab-panel" id="panel-settings">
                     <div class="panel-header">
-                        <h3 id="lbl-page-settings" data-i18n="settings-title">Page Settings</h3>
-                        <p id="lbl-page-settings-desc" data-i18n="settings-desc">Configure SEO metadata and global parameters</p>
+                        <h3 id="lbl-page-settings" data-i18n="settings-title">App Screen Settings</h3>
+                        <p id="lbl-page-settings-desc" data-i18n="settings-desc">Configure layout metadata and global styles</p>
                     </div>
 
                     <div class="inspector-section">
@@ -278,22 +281,22 @@
 
                     <div class="inspector-section">
                         <div class="control-group">
-                            <label class="control-label" data-i18n="label-page-title">Page Title (SEO)</label>
-                            <input type="text" id="setting-title" class="text-input" value="My Awesome Landing Page">
-                            <p class="field-hint" data-i18n="hint-page-title">Appears in the browser tab and search engine results.</p>
+                            <label class="control-label" data-i18n="label-page-title">App Name / Title</label>
+                            <input type="text" id="setting-title" class="text-input" value="My Awesome Application">
+                            <p class="field-hint" data-i18n="hint-page-title">Main title exported inside metadata header.</p>
                         </div>
 
                         <div class="control-group">
-                            <label class="control-label" data-i18n="label-meta-desc">Meta Description</label>
-                            <textarea id="setting-desc" class="text-input text-area" rows="3">Discover our beautiful service. High quality and conversion-optimized blocks built in minutes.</textarea>
-                            <p class="field-hint" data-i18n="hint-meta-desc">A brief description for search engine result snippets.</p>
+                            <label class="control-label" data-i18n="label-meta-desc">App Description</label>
+                            <textarea id="setting-desc" class="text-input text-area" rows="3">Discover our beautiful application screen. Designed in AppForge.</textarea>
+                            <p class="field-hint" data-i18n="hint-meta-desc">Brief descriptive text regarding this prototype.</p>
                         </div>
                     </div>
 
                     <div class="inspector-section">
-                        <label class="control-label" data-i18n="label-fonts-settings">Google Fonts Settings</label>
+                        <label class="control-label" data-i18n="label-fonts-settings">Typography Settings</label>
                         <div class="control-group">
-                            <label class="sub-label" data-i18n="label-font-headings">Heading Font Family</label>
+                            <label class="sub-label" data-i18n="label-font-headings">Header Font Family</label>
                             <select id="setting-font-headings" class="text-input select-input">
                                 <option value="'Outfit', sans-serif">Outfit (Modern / Tech)</option>
                                 <option value="'Inter', sans-serif">Inter (Clean / SaaS)</option>
@@ -316,7 +319,7 @@
                 <div class="tab-panel" id="panel-help">
                     <div class="panel-header">
                         <h3 data-i18n="help-title">Help & Instructions</h3>
-                        <p data-i18n="help-desc">Learn how to build, deploy, and configure your website</p>
+                        <p data-i18n="help-desc">Learn how to build, deploy, and configure your mobile UI designs</p>
                     </div>
 
                     <div class="help-accordion-wrapper">
@@ -327,7 +330,7 @@
                                 <i class="fa-solid fa-chevron-down help-chevron"></i>
                             </div>
                             <div class="help-body-content">
-                                <p data-i18n="help-a1">Click any block in the 'Blocks' tab to add it to the canvas. Click any text directly on the screen to change it, or click images directly to change their URLs.</p>
+                                <p data-i18n="help-a1">Click any widget in the 'Blocks' tab to add it to the canvas. In the editor, click any text directly on the screen to change it, or click images directly to change their URLs.</p>
                             </div>
                         </div>
 
@@ -338,7 +341,7 @@
                                 <i class="fa-solid fa-chevron-down help-chevron"></i>
                             </div>
                             <div class="help-body-content">
-                                <p data-i18n="help-a2">Select a block on the canvas, go to the 'Styles' tab, and scroll to 'Block Content Customization'. Enter the target URL in the 'Button Link URL' field. You can write external URLs or anchor tags like '#pricing'.</p>
+                                <p data-i18n="help-a2">Select a widget on the canvas, go to the 'Styles' tab, and scroll to 'Widget Customization'. Enter the target URL in the 'Button Link URL' field. You can write external URLs or app page anchors like '#pricing'.</p>
                             </div>
                         </div>
 
@@ -349,7 +352,7 @@
                                 <i class="fa-solid fa-chevron-down help-chevron"></i>
                             </div>
                             <div class="help-body-content">
-                                <p data-i18n="help-a3">Select the contact form block. In the Styles tab under content customization, paste a form submission endpoint (e.g. from Formspree.io). The form on your exported website will submit messages directly to your email.</p>
+                                <p data-i18n="help-a3">Select the support ticket block. In the Styles tab under customization, paste a form submission endpoint (e.g. from Formspree.io). The form on your exported app prototype will submit messages directly to your email.</p>
                             </div>
                         </div>
 
@@ -371,7 +374,19 @@
 
         <!-- Canvas Area where elements are built -->
         <main class="canvas-viewport-wrapper">
-            <div class="canvas-viewport" id="viewport-container" data-size="desktop">
+            <div class="canvas-viewport" id="viewport-container" data-size="mobile">
+                <!-- Phone status bar (visible in mobile mode) -->
+                <div class="phone-status-bar">
+                    <span class="status-time">09:41</span>
+                    <div class="dynamic-island"></div>
+                    <div class="status-icons">
+                        <i class="fa-solid fa-signal"></i>
+                        <i class="fa-solid fa-wifi"></i>
+                        <i class="fa-solid fa-battery-three-quarters"></i>
+                    </div>
+                </div>
+
+                <!-- Browser URL bar header (visible in desktop/tablet mode) -->
                 <div class="viewport-header">
                     <div class="viewport-dots">
                         <span class="dot red"></span>
@@ -380,10 +395,10 @@
                     </div>
                     <div class="viewport-url-bar">
                         <i class="fa-solid fa-lock"></i>
-                        <span id="viewport-url-text">https://preview-site.forge</span>
+                        <span id="viewport-url-text">https://app.forge/preview</span>
                     </div>
                     <div class="viewport-info">
-                        <span id="viewport-dimensions">Desktop (100%)</span>
+                        <span id="viewport-dimensions">Mobile (375x720)</span>
                     </div>
                 </div>
 
@@ -391,16 +406,55 @@
                 <div class="canvas-content" id="canvas">
                     <!-- Drop Zone Placeholder (Empty State) -->
                     <div class="canvas-empty-state" id="empty-state">
-                        <div class="empty-icon"><i class="fa-solid fa-plus-circle"></i></div>
-                        <h2 data-i18n="empty-state-title">Your canvas is empty</h2>
-                        <p data-i18n="empty-state-desc">Select blocks from the left sidebar library to start forging your website. Click elements directly inside the canvas to edit text and styles.</p>
+                        <div class="empty-icon"><i class="fa-solid fa-mobile-button"></i></div>
+                        <h2 data-i18n="empty-state-title">Your app mockup is empty</h2>
+                        <p data-i18n="empty-state-desc">Select widgets from the left sidebar panel library to construct your mobile app screens. Click elements directly inside the canvas to edit text and UI layouts.</p>
                         <button class="btn btn-secondary" onclick="document.querySelector('.block-item').click()" data-i18n="empty-state-btn">
-                            Add a Header Block
+                            Add an App Header
                         </button>
                     </div>
                 </div>
+
+                <!-- Phone home indicator bar (visible in mobile mode) -->
+                <div class="phone-home-indicator"></div>
             </div>
         </main>
+    </div>
+
+    <!-- Welcome Start Dashboard Overlay -->
+    <div class="modal-overlay" id="welcome-modal">
+        <div class="modal-card welcome-card">
+            <div class="modal-body welcome-body" style="text-align: center; padding: 40px 30px;">
+                <div class="logo" style="justify-content: center; margin-bottom: 20px;">
+                    <i class="fa-solid fa-wand-magic-sparkles logo-icon" style="font-size: 32px;"></i>
+                    <span class="logo-text" style="font-size: 32px;">App<span class="logo-accent">Forge</span></span>
+                </div>
+                <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 8px; color: #ffffff;" data-i18n="welcome-title">Start Designing Your App UI</h3>
+                <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 30px; line-height: 1.5;" data-i18n="welcome-desc">Select an option below to begin crafting mobile user interface layouts.</p>
+                
+                <div class="welcome-actions" style="display: flex; flex-direction: column; gap: 14px;">
+                    <button class="btn btn-primary" id="btn-welcome-new" style="padding: 14px;" data-i18n="welcome-btn-new">
+                        <i class="fa-solid fa-plus"></i> Create New Project
+                    </button>
+                    
+                    <button class="btn btn-secondary" id="btn-welcome-resume" style="padding: 14px; display: none;" data-i18n="welcome-btn-resume">
+                        <i class="fa-solid fa-clock-rotate-left"></i> Resume Last Session
+                    </button>
+                    
+                    <div class="import-btn-wrapper" style="position: relative;">
+                        <button class="btn btn-secondary" id="btn-welcome-import" style="padding: 14px; width: 100%;" data-i18n="welcome-btn-import">
+                            <i class="fa-solid fa-file-import"></i> Import HTML Design
+                        </button>
+                        <input type="file" id="welcome-file-input" accept=".html" style="position: absolute; top:0; left:0; width:100%; height:100%; opacity:0; cursor:pointer;">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer" style="justify-content: center; background: rgba(0,0,0,0.15);">
+                <span class="connection-status badge-disconnected" id="welcome-db-badge" style="font-size: 11px;">
+                    <i class="fa-solid fa-circle-dot"></i> Database Offline
+                </span>
+            </div>
+        </div>
     </div>
 
     <!-- Supabase Cloud Connection Modal -->

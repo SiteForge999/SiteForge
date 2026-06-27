@@ -647,16 +647,115 @@ button, input, select, textarea {
     background-position: 0 0, 20px 20px;
 }
 
-/* Premium device layout frame */
+/* Premium device layout frames */
 .canvas-viewport {
     background: #ffffff;
     box-shadow: var(--shadow-premium);
-    transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1), min-height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: width 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.15), height 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.15), border-radius 0.5s ease, border 0.5s ease;
     display: flex;
     flex-direction: column;
-    border-radius: 16px;
     overflow: hidden;
+}
+
+/* Smartphone Mockup Frame */
+.canvas-viewport[data-size="mobile"] {
+    width: 375px;
+    height: 720px;
+    border-radius: 40px;
+    border: 12px solid #111827;
+    position: relative;
+    box-shadow: var(--shadow-premium), 0 0 0 4px rgba(255, 255, 255, 0.05);
+}
+.canvas-viewport[data-size="mobile"] .phone-status-bar {
+    display: flex;
+}
+.canvas-viewport[data-size="mobile"] .phone-home-indicator {
+    display: block;
+}
+.canvas-viewport[data-size="mobile"] .viewport-header {
+    display: none;
+}
+
+/* Tablet UI Mockup Frame */
+.canvas-viewport[data-size="tablet"] {
+    width: 768px;
+    height: 900px;
+    border-radius: 24px;
+    border: 12px solid #111827;
+    box-shadow: var(--shadow-premium), 0 0 0 4px rgba(255, 255, 255, 0.04);
+}
+.canvas-viewport[data-size="tablet"] .viewport-header {
+    display: flex;
+}
+.canvas-viewport[data-size="tablet"] .phone-status-bar,
+.canvas-viewport[data-size="tablet"] .phone-home-indicator {
+    display: none;
+}
+
+/* Desktop App Mockup Frame */
+.canvas-viewport[data-size="desktop"] {
+    width: 100%;
+    max-width: 1200px;
+    min-height: 800px;
+    border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.07);
+    box-shadow: var(--shadow-premium);
+}
+.canvas-viewport[data-size="desktop"] .viewport-header {
+    display: flex;
+}
+.canvas-viewport[data-size="desktop"] .phone-status-bar,
+.canvas-viewport[data-size="desktop"] .phone-home-indicator {
+    display: none;
+}
+
+/* Phone Mockup Components */
+.phone-status-bar {
+    display: none; /* hidden on non-mobile */
+    height: 44px;
+    background-color: #0f131a;
+    color: #ffffff;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    user-select: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+    z-index: 60;
+    position: relative;
+}
+.status-time {
+    font-size: 13.5px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+}
+.dynamic-island {
+    width: 95px;
+    height: 25px;
+    background-color: #000000;
+    border-radius: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10px;
+    z-index: 70;
+}
+.status-icons {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+}
+.phone-home-indicator {
+    display: none; /* hidden on non-mobile */
+    width: 130px;
+    height: 5px;
+    background-color: #1f2937;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 60;
 }
 
 .viewport-header {
@@ -1079,6 +1178,19 @@ body.preview-mode .block-actions-overlay {
     display: none !important;
 }
 
+/* Welcome Start Dashboard Overlay */
+.welcome-card {
+    max-width: 440px !important;
+}
+.welcome-actions .btn {
+    font-size: 14.5px;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.welcome-actions .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px -4px rgba(139, 92, 246, 0.25);
+}
 
 /* ==========================================================================
    BLOCK TEMPLATE STYLES (Clean layouts that are bundled inside the exported HTML)

@@ -17,7 +17,7 @@ let currentLang = 'ru'; // Default
 const translations = {
     ru: {
         // App Header
-        "logo-text": 'Site<span class="logo-accent">Forge</span>',
+        "logo-text": 'App<span class="logo-accent">Forge</span>',
         "status-saved": "Черновик сохранен локально",
         "status-cloud-saved": "Сохранено в Supabase Cloud",
         "status-saving": "Сохранение в облако...",
@@ -27,7 +27,13 @@ const translations = {
         "btn-edit": "Режим правки",
         "btn-cloud-save": "Облако",
         "btn-export": "Экспорт HTML",
+        "btn-save": "Сохранить",
         "install-btn-text": "Скачать приложение",
+        "welcome-title": "Начните проектирование интерфейса",
+        "welcome-desc": "Выберите вариант ниже, чтобы начать конструировать макеты мобильных приложений.",
+        "welcome-btn-new": "Создать новый проект",
+        "welcome-btn-resume": "Продолжить прошлую сессию",
+        "welcome-btn-import": "Импортировать HTML-дизайн",
 
         // Sidebar Tabs
         "tab-blocks": "Блоки",
@@ -36,32 +42,32 @@ const translations = {
         "tab-help": "Помощь",
 
         // Panel: Blocks Library
-        "blocks-lib-title": "Библиотека блоков",
-        "blocks-lib-desc": "Нажмите на блок, чтобы добавить его на холст",
-        "cat-nav": "Навигация",
-        "cat-hero": "Главный экран (Hero)",
-        "cat-features": "Возможности и сетка",
-        "cat-social": "Социальное доверие",
-        "cat-contact": "Формы и призывы",
-        "cat-footers": "Подвалы сайтов",
+        "blocks-lib-title": "Компоненты приложения",
+        "blocks-lib-desc": "Нажмите на виджет, чтобы добавить его на холст экрана",
+        "cat-nav": "Навигация и вкладки",
+        "cat-hero": "Экраны приложения",
+        "cat-features": "Сетки и списки",
+        "cat-social": "Тарифы и отзывы",
+        "cat-contact": "Интерактивные баннеры",
+        "cat-footers": "Вкладки меню",
 
-        "block-navbar": "Классическое меню",
-        "block-hero-gradient": "Современный градиент",
-        "block-hero-split": "Сплит-презентация",
-        "block-features-3col": "Преимущества 3-Col",
-        "block-feature-split-left": "Текст и медиа",
-        "block-testimonials": "Сетка отзывов",
-        "block-pricing": "Тарифные сетки",
-        "block-cta-center": "Кнопка действия",
-        "block-contact-simple": "Форма обратной связи",
-        "block-footer-simple": "Простой подвал",
+        "block-navbar": "Шапка приложения",
+        "block-hero-gradient": "Экран приветствия",
+        "block-hero-split": "Инфо-панель (Dashboard)",
+        "block-features-3col": "Сетка разделов (Меню)",
+        "block-feature-split-left": "Карточка контента",
+        "block-testimonials": "Лента отзывов",
+        "block-pricing": "Экран подписки (SaaS)",
+        "block-cta-center": "Интерактивный баннер",
+        "block-contact-simple": "Форма поддержки (Тикеты)",
+        "block-footer-simple": "Нижнее меню навигации",
 
         // Panel: Styles Inspector
-        "no-selection-title": "Блок не выбран",
-        "no-selection-desc": "Кликните на любой блок на холсте, чтобы изменить его цвета, отступы и свойства.",
-        "inspector-block-title": "Свойства блока",
-        "inspector-block-desc": "Настройте выбранный блок ниже",
-        "label-bg-style": "Стиль фона",
+        "no-selection-title": "Виджет не выбран",
+        "no-selection-desc": "Кликните на любой виджет на мобильном холсте, чтобы изменить его цвета, отступы и свойства.",
+        "inspector-block-title": "Свойства виджета",
+        "inspector-block-desc": "Настройте выбранный виджет ниже",
+        "label-bg-style": "Фон виджета",
         "btn-bg-color": "Цвет",
         "btn-bg-gradient": "Градиент",
         "btn-bg-image": "Картинка",
@@ -70,8 +76,8 @@ const translations = {
         "label-bg-image-url": "Ссылка на картинку фона",
         "label-text-colors": "Цвета текста",
         "label-text-color-primary": "Основной заголовок и текст",
-        "label-padding": "Вертикальные отступы",
-        "label-content-customization": "Кастомизация контента",
+        "label-padding": "Отступы виджета (Padding)",
+        "label-content-customization": "Кастомизация виджета",
         "label-showcase-image": "Ссылка на картинку блока",
 
         // Dynamic Inspector Fields
@@ -82,33 +88,33 @@ const translations = {
         "lbl-logo-text": "Текст логотипа",
 
         // Panel: Page Settings
-        "settings-title": "Настройки страницы",
-        "settings-desc": "Настройте метаданные SEO и параметры",
-        "label-page-title": "Заголовок страницы (SEO Title)",
-        "hint-page-title": "Отображается в названии вкладки браузера.",
-        "label-meta-desc": "Meta Description (Описание)",
-        "hint-meta-desc": "Краткое описание страницы для поисковых систем.",
-        "label-fonts-settings": "Шрифты Google Fonts",
+        "settings-title": "Настройки экрана",
+        "settings-desc": "Настройте метаданные макета и глобальные стили",
+        "label-page-title": "Название приложения",
+        "hint-page-title": "Отображается в метаданных экспортируемого заголовка.",
+        "label-meta-desc": "Описание прототипа (Description)",
+        "hint-meta-desc": "Краткое описание назначения этого макета.",
+        "label-fonts-settings": "Настройки шрифтов",
         "label-font-headings": "Шрифт заголовков",
         "label-font-body": "Шрифт основного текста",
         "label-editor-language": "Язык интерфейса",
 
         // Panel: Help & Manual Instructions
         "help-title": "Руководство пользователя",
-        "help-desc": "Инструкция по созданию, настройке и публикации сайта",
+        "help-desc": "Инструкция по созданию, настройке и публикации прототипа",
         "help-q1": "1. Как добавлять и редактировать контент?",
-        "help-a1": "Нажмите на нужный блок во вкладке «Блоки», чтобы добавить его. Вы можете изменять любой текст на холсте прямо на экране (просто кликните по тексту). Чтобы заменить картинку, нажмите на нее прямо на холсте и введите новую ссылку.",
+        "help-a1": "Нажмите на нужный виджет во вкладке «Блоки», чтобы добавить его на холст. Вы можете изменять любой текст прямо на экране мобильного телефона (просто кликните по тексту). Чтобы заменить картинку, нажмите на нее на холсте и введите новую ссылку.",
         "help-q2": "2. Как настроить ссылки на кнопках?",
-        "help-a2": "Выделите нужный блок кликом на холсте, перейдите во вкладку «Стили» и прокрутите вниз до раздела «Кастомизация контента». Введите URL-адрес назначения в поле «Ссылка для кнопки». Вы можете указывать полные ссылки (например, https://my-site.ru/buy) или якоря переходов внутри страницы (например, #pricing).",
-        "help-q3": "3. Как заставить форму контактов работать?",
-        "help-a3": "Выделите форму контактов на холсте. В разделе кастомизации контента введите ссылку для отправки (например, от бесплатного сервиса Formspree.io). На готовом сайте форма будет отправлять все заявки на вашу электронную почту.",
-        "help-q4": "4. Как экспортировать и запустить сайт бесплатно?",
-        "help-a4": "Нажмите кнопку «Экспорт HTML» в верхнем правом углу. Браузер сгенерирует чистый код и скачает файл «index.html». Вы можете перетащить этот файл на бесплатный хостинг Netlify или залить на GitHub Pages, и страница будет работать бесплатно в интернете!",
+        "help-a2": "Выделите виджет кликом на холсте, перейдите во вкладку «Стили» и прокрутите вниз до раздела «Кастомизация виджета». Введите URL-адрес назначения в поле «Ссылка для кнопки». Вы можете указывать ссылки переходов на экраны (например, #pricing).",
+        "help-q3": "3. Как заставить форму поддержки работать?",
+        "help-a3": "Выделите виджет тикета поддержки на холсте. В разделе кастомизации введите ссылку для отправки (например, от бесплатного сервиса Formspree.io). На готовом прототипе форма будет отправлять все заявки на вашу электронную почту.",
+        "help-q4": "4. Как экспортировать и запустить прототип бесплатно?",
+        "help-a4": "Нажмите кнопку «Экспорт HTML» в верхнем правом углу. Браузер сгенерирует чистый код и скачает файл «index.html». Вы можете залить этот файл на бесплатный хостинг GitHub Pages, и макет будет работать на телефоне у вашего клиента!",
 
         // Canvas Empty State
-        "empty-state-title": "Ваш холст пуст",
-        "empty-state-desc": "Выберите блоки в левой панели, чтобы начать создание сайта. Кликайте по текстам прямо на холсте для их изменения.",
-        "empty-state-btn": "Добавить шапку сайта",
+        "empty-state-title": "Ваш макет приложения пуст",
+        "empty-state-desc": "Выберите виджеты в левой панели, чтобы собрать экраны вашего мобильного приложения. Кликайте по текстам прямо на холсте для их изменения.",
+        "empty-state-btn": "Добавить шапку приложения",
 
         // Supabase Modal
         "modal-sb-title": "Подключение Supabase Cloud",
@@ -124,7 +130,7 @@ const translations = {
     },
     en: {
         // App Header
-        "logo-text": 'Site<span class="logo-accent">Forge</span>',
+        "logo-text": 'App<span class="logo-accent">Forge</span>',
         "status-saved": "Draft saved locally",
         "status-cloud-saved": "Saved to Supabase Cloud",
         "status-saving": "Saving to cloud...",
@@ -134,41 +140,47 @@ const translations = {
         "btn-edit": "Edit Mode",
         "btn-cloud-save": "Cloud Save",
         "btn-export": "Export HTML",
+        "btn-save": "Save",
         "install-btn-text": "Install App",
+        "welcome-title": "Start Designing Your App UI",
+        "welcome-desc": "Select an option below to begin crafting mobile user interface layouts.",
+        "welcome-btn-new": "Create New Project",
+        "welcome-btn-resume": "Resume Last Session",
+        "welcome-btn-import": "Import HTML Design",
 
         // Sidebar Tabs
         "tab-blocks": "Blocks",
         "tab-styles": "Styles",
-        "tab-settings": "Page",
+        "tab-settings": "Settings",
         "tab-help": "Help",
 
         // Panel: Blocks Library
-        "blocks-lib-title": "Block Library",
-        "blocks-lib-desc": "Click blocks to add them to your website canvas",
-        "cat-nav": "Navigation",
-        "cat-hero": "Hero Sections",
-        "cat-features": "Features & Grid",
-        "cat-social": "Social Proof",
-        "cat-contact": "Contact & Callout",
-        "cat-footers": "Footers",
+        "blocks-lib-title": "App UI Components",
+        "blocks-lib-desc": "Click widgets to construct your mobile app screens",
+        "cat-nav": "Navigation & Tabs",
+        "cat-hero": "App Screens",
+        "cat-features": "Grids & Lists",
+        "cat-social": "Pricing & Social",
+        "cat-contact": "Interaction Banners",
+        "cat-footers": "Tab Menus",
 
-        "block-navbar": "Classic Header",
-        "block-hero-gradient": "Modern Gradient",
-        "block-hero-split": "Split Showcase",
-        "block-features-3col": "3-Col Features",
-        "block-feature-split-left": "Media & Text",
-        "block-testimonials": "Reviews Grid",
-        "block-pricing": "Pricing Cards",
-        "block-cta-center": "Action Callout",
-        "block-contact-simple": "Contact Form",
-        "block-footer-simple": "Footer Simple",
+        "block-navbar": "App Header",
+        "block-hero-gradient": "Welcome Screen",
+        "block-hero-split": "App Dashboard Card",
+        "block-features-3col": "App Grid Menu",
+        "block-feature-split-left": "Media Feed Card",
+        "block-testimonials": "Reviews Feed",
+        "block-pricing": "In-App Subscription",
+        "block-cta-center": "Newsletter Banner",
+        "block-contact-simple": "Support Ticket Form",
+        "block-footer-simple": "Bottom Navigation",
 
         // Panel: Styles Inspector
-        "no-selection-title": "No Block Selected",
-        "no-selection-desc": "Click on any block in the canvas to customize its colors, spacing, and properties.",
-        "inspector-block-title": "Block Properties",
-        "inspector-block-desc": "Customize the selected block below",
-        "label-bg-style": "Background Style",
+        "no-selection-title": "No Widget Selected",
+        "no-selection-desc": "Click on any widget in the mobile canvas to customize its colors, spacing, and properties.",
+        "inspector-block-title": "Widget Properties",
+        "inspector-block-desc": "Customize the selected widget below",
+        "label-bg-style": "Widget Background",
         "btn-bg-color": "Color",
         "btn-bg-gradient": "Gradient",
         "btn-bg-image": "Image",
@@ -177,8 +189,8 @@ const translations = {
         "label-bg-image-url": "Background Image URL",
         "label-text-colors": "Text Colors",
         "label-text-color-primary": "Primary Title & Text",
-        "label-padding": "Padding (Vertical Spacing)",
-        "label-content-customization": "Block Content Customization",
+        "label-padding": "Widget Spacing (Padding)",
+        "label-content-customization": "Widget Customization",
         "label-showcase-image": "Showcase Image URL",
 
         // Dynamic Inspector Fields
@@ -189,33 +201,33 @@ const translations = {
         "lbl-logo-text": "Logo Brand Name",
 
         // Panel: Page Settings
-        "settings-title": "Page Settings",
-        "settings-desc": "Configure SEO metadata and global parameters",
-        "label-page-title": "Page Title (SEO Title)",
-        "hint-page-title": "Appears in the browser tab and search engine results.",
-        "label-meta-desc": "Meta Description",
-        "hint-meta-desc": "A brief description for search engine result snippets.",
-        "label-fonts-settings": "Google Fonts Settings",
-        "label-font-headings": "Heading Font Family",
+        "settings-title": "App Screen Settings",
+        "settings-desc": "Configure layout metadata and global styles",
+        "label-page-title": "App Name / Title",
+        "hint-page-title": "Main title exported inside metadata header.",
+        "label-meta-desc": "App Description",
+        "hint-meta-desc": "Brief descriptive text regarding this prototype.",
+        "label-fonts-settings": "Typography Settings",
+        "label-font-headings": "Header Font Family",
         "label-font-body": "Body Font Family",
         "label-editor-language": "Editor Language",
 
         // Panel: Help & Manual Instructions
         "help-title": "Help & Instructions",
-        "help-desc": "Learn how to build, deploy, and configure your website",
+        "help-desc": "Learn how to build, deploy, and configure your mobile UI designs",
         "help-q1": "1. How to add and edit content?",
-        "help-a1": "Click any block in the 'Blocks' tab to add it to the canvas. Click any text directly on the screen to change it, or click images directly to change their URLs.",
+        "help-a1": "Click any widget in the 'Blocks' tab to add it to the canvas. Click any text directly on the screen to change it, or click images directly to change their URLs.",
         "help-q2": "2. How to configure links on buttons?",
-        "help-a2": "Select a block on the canvas, go to the 'Styles' tab, and scroll to 'Block Content Customization'. Enter the target URL in the 'Button Link URL' field. You can write external URLs or anchor tags like '#pricing'.",
+        "help-a2": "Select a widget on the canvas, go to the 'Styles' tab, and scroll to 'Widget Customization'. Enter the target URL in the 'Button Link URL' field. You can write external URLs or app page anchors like '#pricing'.",
         "help-q3": "3. How to make the contact form work?",
-        "help-a3": "Select the contact form block. In the Styles tab under content customization, paste a form submission endpoint (e.g. from Formspree.io). The form on your exported website will submit messages directly to your email.",
+        "help-a3": "Select the support ticket block. In the Styles tab under customization, paste a form submission endpoint (e.g. from Formspree.io). The form on your exported app prototype will submit messages directly to your email.",
         "help-q4": "4. How to export and host for free?",
         "help-a4": "Click the 'Export HTML' button in the top right. It will compile your layout and download it as an 'index.html' file. You can drag and drop this file into Netlify or upload it to GitHub Pages for 100% free hosting.",
 
         // Canvas Empty State
-        "empty-state-title": "Your canvas is empty",
-        "empty-state-desc": "Select blocks from the left sidebar library to start forging your website. Click elements directly inside the canvas to edit text and styles.",
-        "empty-state-btn": "Add a Header Block",
+        "empty-state-title": "Your app mockup is empty",
+        "empty-state-desc": "Select widgets from the left sidebar panel library to construct your mobile app screens. Click elements directly inside the canvas to edit text and UI layouts.",
+        "empty-state-btn": "Add an App Header",
 
         // Supabase Modal
         "modal-sb-title": "Connect Supabase Backend",
@@ -261,15 +273,20 @@ function applyLanguage(lang) {
         }
     }
 
-    // Update DB status badge
+    // Update DB status badges
     const badge = document.getElementById("db-status-badge");
-    if (badge) {
-        if (badge.classList.contains("badge-connected")) {
-            badge.innerHTML = `<i class="fa-solid fa-circle-dot"></i> ` + t["modal-badge-connected"];
-        } else {
-            badge.innerHTML = `<i class="fa-solid fa-circle-dot"></i> ` + t["modal-badge-disconnected"];
+    const welcomeBadge = document.getElementById("welcome-db-badge");
+    [badge, welcomeBadge].forEach(b => {
+        if (b) {
+            if (b.classList.contains("badge-connected")) {
+                b.className = "connection-status badge-connected";
+                b.innerHTML = `<i class="fa-solid fa-circle-dot"></i> ` + t["modal-badge-connected"];
+            } else {
+                b.className = "connection-status badge-disconnected";
+                b.innerHTML = `<i class="fa-solid fa-circle-dot"></i> ` + t["modal-badge-disconnected"];
+            }
         }
-    }
+    });
 
     // Update viewport dimensions text
     const viewportDimText = document.getElementById("viewport-dimensions");
@@ -309,8 +326,8 @@ function applyLanguage(lang) {
 
 // --- STATE MANAGEMENT ---
 let projectState = {
-    title: "My Awesome Landing Page",
-    description: "Discover our beautiful service. High quality and conversion-optimized blocks built in minutes.",
+    title: "My Awesome Application",
+    description: "Discover our beautiful application screen. Designed in AppForge.",
     fontHeadings: "'Outfit', sans-serif",
     fontBody: "'Inter', sans-serif",
     blocks: [] 
@@ -729,11 +746,92 @@ const blockTemplates = {
 
 // --- INITIALIZATION ---
 document.addEventListener("DOMContentLoaded", () => {
-    loadDraft();
+    initLocalization();
+    
+    const welcomeModal = document.getElementById("welcome-modal");
+    const resumeBtn = document.getElementById("btn-welcome-resume");
+    const hasDraft = localStorage.getItem("siteforge_draft");
+
+    if (hasDraft) {
+        resumeBtn.style.display = "block";
+    } else {
+        resumeBtn.style.display = "none";
+    }
+
+    // Bind Welcome Modal actions
+    document.getElementById("btn-welcome-new").addEventListener("click", () => {
+        projectState = {
+            title: currentLang === 'ru' ? "Мое мобильное приложение" : "My Awesome Application",
+            description: currentLang === 'ru' ? "Создайте интерфейс вашего мобильного приложения в конструкторе AppForge." : "Discover our beautiful application screen. Designed in AppForge.",
+            fontHeadings: "'Outfit', sans-serif",
+            fontBody: "'Inter', sans-serif",
+            blocks: []
+        };
+        
+        document.getElementById("setting-title").value = projectState.title;
+        document.getElementById("setting-desc").value = projectState.description;
+        document.getElementById("setting-font-headings").value = projectState.fontHeadings;
+        document.getElementById("setting-font-body").value = projectState.fontBody;
+
+        saveDraft();
+        renderCanvas();
+        welcomeModal.style.display = "none";
+    });
+
+    document.getElementById("btn-welcome-resume").addEventListener("click", () => {
+        loadDraft();
+        renderCanvas();
+        welcomeModal.style.display = "none";
+    });
+
+    // HTML Import File Listener
+    document.getElementById("welcome-file-input").addEventListener("change", (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        
+        const reader = new FileReader();
+        reader.onload = (evt) => {
+            const htmlText = evt.target.result;
+            try {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(htmlText, "text/html");
+                const stateScript = doc.getElementById("siteforge-project-state");
+                if (stateScript) {
+                    const importedState = JSON.parse(stateScript.textContent);
+                    if (importedState && Array.isArray(importedState.blocks)) {
+                        projectState = importedState;
+                        
+                        document.getElementById("setting-title").value = projectState.title;
+                        document.getElementById("setting-desc").value = projectState.description;
+                        document.getElementById("setting-font-headings").value = projectState.fontHeadings;
+                        document.getElementById("setting-font-body").value = projectState.fontBody;
+
+                        saveDraft();
+                        renderCanvas();
+                        welcomeModal.style.display = "none";
+                        alert(currentLang === 'ru' ? "Проект успешно импортирован!" : "Project successfully imported!");
+                    } else {
+                        throw new Error(currentLang === 'ru' ? "Неверная структура данных проекта в файле." : "Invalid project state structure in file.");
+                      }
+                } else {
+                    throw new Error(currentLang === 'ru' ? 
+                        "Не удалось найти конфигурацию дизайна в этом файле. Убедитесь, что импортируете рабочий файл, скачанный из AppForge!" : 
+                        "Could not find design configuration script inside this HTML. Make sure the file was exported from AppForge!");
+                }
+            } catch (err) {
+                alert((currentLang === 'ru' ? "Ошибка импорта: " : "Import error: ") + err.message);
+            }
+            // Clear input value so same file can be uploaded again if needed
+            e.target.value = "";
+        };
+        reader.readAsText(file);
+    });
+
+    // Make welcome modal visible on start
+    welcomeModal.style.display = "flex";
+
     initUIEventListeners();
     initPWAInstallation();
-    initLocalization();
-    renderCanvas();
 });
 
 // --- LOAD & SAVE DRAFT LOCALLY ---
@@ -1268,6 +1366,35 @@ function initLocalization() {
 
 // --- EVENT LISTENERS REGISTRATION ---
 function initUIEventListeners() {
+    // Header Save Button Action
+    const headerSaveBtn = document.getElementById("btn-header-save");
+    if (headerSaveBtn) {
+        headerSaveBtn.addEventListener("click", async () => {
+            saveDraft();
+            
+            const originalHtml = headerSaveBtn.innerHTML;
+            headerSaveBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i>`;
+            headerSaveBtn.disabled = true;
+
+            if (typeof supabaseClient !== "undefined" && supabaseClient) {
+                try {
+                    await saveProjectToSupabase();
+                } catch (err) {
+                    console.error("Supabase Save Error in header", err);
+                }
+            } else {
+                setTimeout(() => {
+                    alert(currentLang === 'ru' ? "Проект сохранен локально в браузере!" : "Project saved locally in browser!");
+                }, 450);
+            }
+            
+            setTimeout(() => {
+                headerSaveBtn.innerHTML = originalHtml;
+                headerSaveBtn.disabled = false;
+            }, 500);
+        });
+    }
+
     // 1. Sidebar Tab Switchers (Updated to support help tab)
     const tabButtons = document.querySelectorAll(".sidebar-tabs .tab-btn");
     tabButtons.forEach(btn => {
@@ -1564,6 +1691,8 @@ async function exportHtmlWebsite() {
 
     ${compiledBlocksHtml.trim()}
 
+    <!-- AppForge State Data (Do not remove: allows import back into the editor) -->
+    <script id="siteforge-project-state" type="application/json">${JSON.stringify(projectState)}</script>
 </body>
 </html>`;
 
