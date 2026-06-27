@@ -78,7 +78,11 @@ function initializeSupabase(url, key, alertSuccess = false) {
 
             // Update badge UI
             badge.className = "connection-status badge-connected";
-            badge.innerHTML = `<i class="fa-solid fa-circle-dot"></i> Connected`;
+            if (typeof applyLanguage === "function") {
+                applyLanguage(currentLang);
+            } else {
+                badge.innerHTML = `<i class="fa-solid fa-circle-dot"></i> Connected`;
+            }
             
             statusText.textContent = "Connected to Supabase Cloud";
             document.querySelector("#save-status .status-icon").style.color = "#10b981";
