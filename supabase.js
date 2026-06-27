@@ -21,12 +21,16 @@
  * =========================================================================
  */
 
+// --- DEFAULT CONFIGURATION (You can fill these for your buyer) ---
+const DEFAULT_SUPABASE_URL = "https://opiqyilnaubbzqmkinlf.supabase.co"; // e.g. "https://opiqyilnaubbzqmkinlf.supabase.co"
+const DEFAULT_SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9waXF5aWxuYXViYnpxbWtpbmxmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI1NjY3OTcsImV4cCI6MjA5ODE0Mjc5N30.icsvi31PTbhsLJQ0BmksWu2kX0gdjwj6eyV2nnI5a9I"; // e.g. "your-anon-key-here"
+
 let supabaseClient = null;
 
-// On load, check if connection keys are already saved in localStorage
+// On load, check if connection keys are already saved in localStorage or defaults are set
 document.addEventListener("DOMContentLoaded", () => {
-    const savedUrl = localStorage.getItem("siteforge_supabase_url");
-    const savedKey = localStorage.getItem("siteforge_supabase_key");
+    const savedUrl = localStorage.getItem("siteforge_supabase_url") || DEFAULT_SUPABASE_URL;
+    const savedKey = localStorage.getItem("siteforge_supabase_key") || DEFAULT_SUPABASE_KEY;
 
     if (savedUrl && savedKey) {
         document.getElementById("supabase-url").value = savedUrl;
